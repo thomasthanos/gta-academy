@@ -198,7 +198,7 @@ section h2 {
 
 /* Description section */
 .description {
-    margin-top: 30px;
+    margin-top: 35px;
     margin-left: 15em;  /* Space on the left */
     margin-right: 15em; /* Space on the right */
     font-size: 16px;
@@ -227,7 +227,25 @@ section h2 {
     gap: 20px; /* Απόσταση μεταξύ των καρτών */
     justify-items: center;
 }
+.card p {
+    width: calc(100% - 90px); /* Ensure the width is appropriate */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Perfect vertical alignment */
+    margin-top: auto; /* Place the text at the bottom */
+    padding: 20px 15px; /* Balanced padding */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    background-color: rgba(0, 0, 0, 0.055); /* Default background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
 
+/* Hover Effect */
+.card p:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker background on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
 
 
 .card:hover {
@@ -250,7 +268,7 @@ section h2 {
     transform: scale(1.05); /* Απαλή μεγέθυνση */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Ισχυρότερη σκιά για πιο μοντέρνο εφέ */
     opacity: 1; /* Διατηρεί την αδιαφάνεια για πιο φωτεινό αποτέλεσμα */
-    filter: contrast(200%);
+    filter: contrast(115%);
 }
 
 .card .description {
@@ -283,10 +301,10 @@ section h2 {
         width: 90%; /* Slightly smaller width for mobile */
         max-width: none; /* Remove max-width on small screens */
     }
-}
-
-/* Responsive Menu */
-@media (max-width: 768px) {
+    .card p {
+        width: calc(100% - 60px); /* Adjust width for smaller screens */
+        padding: 15px 10px; /* Slightly smaller padding */
+    }
     .menu {
         display: none;
         flex-direction: column;

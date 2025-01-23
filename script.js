@@ -13,6 +13,7 @@ window.addEventListener('scroll', () => {
         switchButton.style.opacity = '0'; // Κρύβουμε το κουμπί
         switchButton.style.visibility = 'hidden'; // Το κάνει εντελώς αόρατο
         switchButton.style.pointerEvents = 'none'; // Απενεργοποιούμε το click
+        
     } else {
         // Επιστρέφει στην αρχική του θέση με πιο μοντέρνα κίνηση
         switchButton.style.transform = 'translateX(0) scale(1) rotate(0deg)';
