@@ -1,0 +1,345 @@
+html {
+    overflow-y: scroll; /* Εξασφαλίζει ότι το scrollbar θα εμφανίζεται */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* Προσωρινά για να υπάρχει αρκετό περιεχόμενο */
+    scroll-behavior: smooth; /* Smooth scrolling για την κύλιση */
+    scrollbar-width: thin; /* Για Firefox */
+    scrollbar-color: #4e6e7d #c9d6df; /* Εντονότερο χρώμα για Thumb και Track για Firefox */
+    padding-top: 60px; /* Αφήνουμε χώρο κάτω από το μενού */
+}
+
+html::-webkit-scrollbar {
+    width: 10px; /* Εντονότερο πλάτος του scrollbar */
+}
+
+html::-webkit-scrollbar-track {
+    background: #c9d6df; /* Ελαφρύ γκρι με πιο έντονη απόχρωση για το track */
+    border-radius: 4px; /* Ελαφρύ border-radius */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #4e6e7d; /* Πιο έντονο μπλε-πράσινο για το thumb */
+    border-radius: 4px; /* Ελαφρύ border-radius */
+    transition: background 0.3s ease-in-out; /* Απαλό εφέ κατά την αλλαγή χρώματος */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #3b545f; /* Πιο σκούρο μπλε-πράσινο για το hover */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #333333, #444444); /* Σκούρο αθρακι gradient φόντο */
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Ενισχυμένο shadow για μεγαλύτερο βάθος */
+    border-bottom: 4px solid #444444; /* Οριοθέτηση με μια σκούρα αθρακι γραμμή */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Γραμματοσειρά Comic Sans */
+    font-size: 18px;
+    letter-spacing: 1px; /* Ξεχωριστές αποστάσεις για πιο κομψό αποτέλεσμα */
+    text-transform: uppercase; /* Μεγαλύτερη ένταση στους τίτλους */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #003366, #3366cc); /* Gradient text with dark blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed; /* Σταθερό στη θέση του */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000; /* Υψηλότερο από το κουμπί */
+    background-color: #333; /* Προσθέστε χρώμα φόντου για να είναι ευδιάκριτο */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Προσθήκη σκιάς για βάθος */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Responsive για μικρές οθόνες */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+section h2 {
+    text-align: center; /* Κεντράρισμα κειμένου */
+    font-size: 24px; /* Προσαρμογή μεγέθους γραμματοσειράς */
+    margin-bottom: 20px; /* Απόσταση από το περιεχόμενο */
+    color: #333; /* Χρώμα γραμματοσειράς */
+}
+
+/* Home Section */
+#home {
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 36px; /* Μεγαλύτερο μέγεθος γραμματοσειράς */
+    font-weight: bold; /* Παχύς τίτλος */
+    text-transform: uppercase; /* Μεγέθυνση όλων των γραμμάτων */
+    letter-spacing: 2px; /* Απόσταση μεταξύ των γραμμάτων */
+    margin: 0; /* Βεβαιωθείτε ότι δεν υπάρχει περιττό περιθώριο γύρω από το h1 */
+    padding: 0; /* Αφαίρεση οποιουδήποτε padding */
+    display: inline-block; /* Βεβαιώνουμε ότι το h1 έχει μόνο την περιοχή του κειμένου */
+    cursor: pointer; /* Προσθήκη δείκτη για το hover */
+    font-family: 'Arial', sans-serif; /* Επιλογή γραμματοσειράς */
+    transition: all 0.3s ease; /* Ομαλή μετάβαση για αλλαγές */
+    line-height: 1.4; /* Επαρκής απόσταση μεταξύ των γραμμών */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Ελαφριά σκιά για βάθος */
+}
+
+#home h1:hover {
+    color: #1677ff; /* Χρώμα κατά το hover (μπλε) */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Ενίσχυση της σκιάς */
+    transform: scale(1.05); /* Ελαφριά αύξηση μεγέθους για ένταση */
+}
+
+
+.image-container {
+    margin: 20px auto;
+    max-width: 1300px;
+    max-height: 80vh;
+    padding: 15px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    border: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease, box-shadow 1.5s ease; /* Εδώ είναι το κλειδί */
+    perspective: 1200px;
+}
+
+.image-container:hover {
+    transform: perspective(1200px) rotateX(8deg) rotateY(-8deg) scale(1.05);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 1s ease, box-shadow 1.5s ease; /* Πιο smooth hover effect */
+}
+
+  
+  .main-image {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 20px; /* Στρογγυλεμένες γωνίες για cozy αίσθηση */
+    border: none; /* Αφαιρούμε το παραδοσιακό border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1); /* Πιο απαλό shadow για την εικόνα */
+    transition: transform 1.5s ease, filter 1.5s ease; /* Πιο αργό animation για zoom και φωτεινότητα */
+  }
+  
+  .image-container:hover .main-image {
+    transform: scale(1.02) rotate(0deg); /* Ελαφρύ zoom για cozy αίσθηση */
+    filter: brightness(1.2) contrast(1.1); /* Ενίσχυση φωτεινότητας και αντίθεσης για μοντέρνο look */
+    transition: transform 1s ease, filter 1s ease; /* Πιο αργό και smooth hover effect */
+  }
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+/* Description section */
+.description {
+    margin-top: 35px;
+    margin-left: 15em;  /* Space on the left */
+    margin-right: 15em; /* Space on the right */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    background-color: #f2f3f7; /* Added background color */
+    border-radius: 0.75em; /* Added border-radius */
+    padding: 1em 2em; /* Added extra padding for left and right */
+    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff; /* Shadow effect */
+    border: 1.5px solid #f2f3f7; /* Border added */
+    cursor: pointer; /* Pointer cursor for hover effect */
+    transition: ease 0.2s; /* Smooth transition */
+}
+
+
+.description:hover {
+    background-color: #d3ddf1; /* Hover background color */
+    border: 1.5px solid #1677ff; /* Hover border color */
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Δύο στήλες για μεγάλες οθόνες */
+    gap: 20px; /* Απόσταση μεταξύ των καρτών */
+    justify-items: center;
+}
+.card p {
+    width: calc(100% - 90px); /* Ensure the width is appropriate */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Perfect vertical alignment */
+    margin-top: auto; /* Place the text at the bottom */
+    padding: 20px 15px; /* Balanced padding */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    background-color: rgba(0, 0, 0, 0.055); /* Default background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effect */
+.card p:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker background on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: calc(95% - 20px); /* Μικραίνει την εικόνα για να μην ακουμπάει το πλαίσιο */
+    aspect-ratio: 16 / 9; /* Σταθερή αναλογία πλάτους-ύψους */
+    object-fit: cover; /* Εξασφαλίζει ότι η εικόνα γεμίζει σωστά */
+    border-radius: 12px; /* Στρογγυλεμένες γωνίες */
+    margin: 28px 0; /* Απόσταση πάνω και κάτω από την εικόνα */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Απλές μεταβάσεις */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Βαθιά σκιά για περισσότερο βάθος */
+}
+
+/* Εφέ hover για απαλή μεγέθυνση, έντονη σκιά και φωτεινότητα */
+.card img:hover {
+    transform: scale(1.05); /* Απαλή μεγέθυνση */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Ισχυρότερη σκιά για πιο μοντέρνο εφέ */
+    opacity: 1; /* Διατηρεί την αδιαφάνεια για πιο φωτεινό αποτέλεσμα */
+    filter: contrast(115%);
+}
+
+.card .description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    padding: 10px;
+    text-align: justify;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .description {
+        margin-left: 0.5em; /* Smaller left margin on mobile */
+        margin-right: 0.5em; /* Smaller right margin on mobile */
+        padding: 1em; /* Adjust padding for mobile */
+        font-size: 12px; /* Even smaller font size for mobile */
+    }
+}
+
+
+/* Responsive Layout for other sections (e.g. gallery, menu) */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column for mobile */
+    }
+
+    .card {
+        width: 90%; /* Slightly smaller width for mobile */
+        max-width: none; /* Remove max-width on small screens */
+    }
+    .card p {
+        width: calc(100% - 60px); /* Adjust width for smaller screens */
+        padding: 15px 10px; /* Slightly smaller padding */
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu a {
+        font-size: 18px;
+        padding: 15px 30px;
+        color: white;
+        background: none;
+        border-radius: 5px;
+    }
+
+    .menu a:hover {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
