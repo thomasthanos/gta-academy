@@ -1,6 +1,7 @@
 html {
     overflow-y: scroll; /* Εξασφαλίζει ότι το scrollbar θα εμφανίζεται */
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -9,20 +10,24 @@ body {
     scroll-behavior: smooth; /* Smooth scrolling για την κύλιση */
     scrollbar-width: thin; /* Για Firefox */
     scrollbar-color: #4e6e7d #c9d6df; /* Εντονότερο χρώμα για Thumb και Track για Firefox */
-    padding-top: 30px; /* Προσθήκη padding για να αφήσει χώρο κάτω από το μενού */
+    padding-top: 60px; /* Αφήνουμε χώρο κάτω από το μενού */
 }
+
 html::-webkit-scrollbar {
     width: 10px; /* Εντονότερο πλάτος του scrollbar */
 }
+
 html::-webkit-scrollbar-track {
     background: #c9d6df; /* Ελαφρύ γκρι με πιο έντονη απόχρωση για το track */
     border-radius: 4px; /* Ελαφρύ border-radius */
 }
+
 html::-webkit-scrollbar-thumb {
     background: #4e6e7d; /* Πιο έντονο μπλε-πράσινο για το thumb */
     border-radius: 4px; /* Ελαφρύ border-radius */
     transition: background 0.3s ease-in-out; /* Απαλό εφέ κατά την αλλαγή χρώματος */
 }
+
 html::-webkit-scrollbar-thumb:hover {
     background: #3b545f; /* Πιο σκούρο μπλε-πράσινο για το hover */
 }
@@ -42,14 +47,6 @@ header {
     text-transform: uppercase; /* Μεγαλύτερη ένταση στους τίτλους */
 }
 
-/* Σημαντικό: Δεν αλλάξαμε το menu */
-.menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -58,6 +55,19 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed; /* Σταθερό στη θέση του */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000; /* Υψηλότερο από το κουμπί */
+    background-color: #333; /* Προσθέστε χρώμα φόντου για να είναι ευδιάκριτο */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Προσθήκη σκιάς για βάθος */
+}
 
 .menu {
     display: flex;
@@ -73,19 +83,18 @@ header {
 .menu a {
     text-decoration: none;
     color: white;
-    padding: 12px 25px; /* Ελαφρώς μεγαλύτερο padding για καλύτερη εμφάνιση */
-    border-radius: 25px; /* Λίγο πιο στρογγυλά άκρα */
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Προσθήκη animation */
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
-/* Εφέ hover */
 .menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Ελαφρύ background effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Σκιά κατά το hover */
-    transform: scale(1.05); /* Ελαφρά μεγέθυνση του link */
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
 
-
+/* Responsive για μικρές οθόνες */
 .hamburger {
     display: none;
     background: none;
@@ -219,21 +228,7 @@ section h2 {
     justify-items: center;
 }
 
-.card {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    border-radius: 12px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    max-width: 70%;
-    width: 100%; /* Εξασφαλίζει ότι οι κάρτες γεμίζουν το χώρο */
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden; /* Για να μην ξεφεύγουν τα περιεχόμενα */
-    margin: 0 auto; /* Κεντράρισμα της κάρτας */
-    padding: 10px; /* Προσθήκη περιθωρίου μέσα στην κάρτα */
-}
+
 
 .card:hover {
     transform: translateY(-10px);
@@ -241,11 +236,21 @@ section h2 {
 }
 
 .card img {
-    width: calc(100% - 20px); /* Μικραίνει την εικόνα για να μην ακουμπάει το πλαίσιο */
+    width: calc(95% - 20px); /* Μικραίνει την εικόνα για να μην ακουμπάει το πλαίσιο */
     aspect-ratio: 16 / 9; /* Σταθερή αναλογία πλάτους-ύψους */
     object-fit: cover; /* Εξασφαλίζει ότι η εικόνα γεμίζει σωστά */
-    border-radius: 8px; /* Στρογγυλεμένες γωνίες */
-    margin: 10px 0; /* Απόσταση πάνω και κάτω από την εικόνα */
+    border-radius: 12px; /* Στρογγυλεμένες γωνίες */
+    margin: 28px 0; /* Απόσταση πάνω και κάτω από την εικόνα */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Απλές μεταβάσεις */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Βαθιά σκιά για περισσότερο βάθος */
+}
+
+/* Εφέ hover για απαλή μεγέθυνση, έντονη σκιά και φωτεινότητα */
+.card img:hover {
+    transform: scale(1.05); /* Απαλή μεγέθυνση */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Ισχυρότερη σκιά για πιο μοντέρνο εφέ */
+    opacity: 1; /* Διατηρεί την αδιαφάνεια για πιο φωτεινό αποτέλεσμα */
+    filter: contrast(200%);
 }
 
 .card .description {

@@ -1,16 +1,25 @@
-
 .switch {
     font-size: 17px;
-    position: fixed; /* Τοποθέτηση στο σταθερό σημείο */
-    display: inline-block;
+    position: fixed; /* Σταθερή θέση πάνω στην οθόνη */
+    top: 90px; /* Απόσταση από την κορυφή */
+    right: 70px; /* Απόσταση από τα δεξιά */
     width: 3.5em;
     height: 2em;
-    top: 80px; /* Ρύθμιση για την απόσταση από την κορυφή */
-    right: 50px; /* Ρύθμιση για την απόσταση από τα δεξιά */
-    transform-style: preserve-3d;
-    perspective: 500px;
-    animation: toggle__animation 3s infinite;
+    opacity: 1; /* Αρχική ορατότητα */
+    visibility: visible; /* Ξεκινάμε το κουμπί ορατό */
+    z-index: 1000; /* Υψηλότερη προτεραιότητα από τα υπόλοιπα στοιχεία */
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.3s ease; /* Ομαλό animation για κίνηση, διαφάνεια και ορατότητα */
 }
+
+
+
+
+/* Όλες οι άλλες ρυθμίσεις παραμένουν όπως είναι */
+
+
+/* Όλες οι υπόλοιπες ρυθμίσεις παραμένουν όπως είναι */
+
+
 .switch::before {
     content: "";
     position: absolute;
@@ -232,4 +241,196 @@ body.light-mode #home h1:hover {
     color: #1677ff; /* Αλλαγή χρώματος κατά το hover στο light mode */
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); /* Σκούρα σκιά στο hover για light mode */
     transform: scale(1.05); /* Ελαφριά μεγέθυνση κατά το hover */
+}
+
+
+
+
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default for PC */
+    gap: 70px; /* Gap for PC */
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 30px; /* Reduced gap for smaller screens */
+    }
+    .switch {
+        top: 80px; /* Φέρνουμε τη θέση πιο χαμηλά */
+        right: 20px; /* Μειώνουμε την απόσταση από τα δεξιά */
+        transform: scale(0.80);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Smaller gap for mobile */
+    }
+
+    .card {
+        margin: 0 auto; /* Center the card on mobile */
+        max-width: 90%; /* Limit width for better appearance on small screens */
+        display: flex;
+        justify-content: center; /* Center content inside the card */
+        align-items: center; /* Ensure vertical alignment */
+    }
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 550px; /* Maximum width for cards */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card p {
+
+    padding: 20px;
+    font-size: 18px; /* Default size for PC */
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--card-content-bg) 50%, rgba(255, 255, 255, 0.1));
+    border-top: 2px solid var(--border-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    animation: fadeInSlide 0.6s ease both;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    /* Full width for desktops */
+    width: 90%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.card p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    transform: skewX(-45deg);
+    transition: left 0.5s ease;
+}
+
+.card:hover p::before {
+    left: 100%;
+}
+
+.card:hover p {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), var(--card-content-bg));
+    color: var(--text-color-hover);
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Light Mode */
+body.light-mode {
+    --card-bg: #ffffff;
+    --card-content-bg: #f9f9f9;
+    --text-color: #333;
+    --text-color-hover: #000;
+    --border-color: #ddd;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --card-bg: #1e1e2f;
+    --card-content-bg: #2b2b3c;
+    --text-color: #e0e0e0;
+    --text-color-hover: #fff;
+    --border-color: #444;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Toggle Button for Dark/Light Mode */
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background-color: var(--card-content-bg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* Στυλ για το Light Mode */
+body.light-mode .card img {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.651); /* Μικρότερο blur για το Light Mode */
+}
+
+body.light-mode .card img:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.603); /* Μικρότερη σκιά για το Light Mode */
+    filter: brightness(1.25); /* Αύξηση φωτεινότητας για Light Mode */
+}
+
+/* Στυλ για το Dark Mode */
+body.dark-mode .card img {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425); /* Μικρότερο blur για το Dark Mode */
+}
+
+body.dark-mode .card img:hover {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.479); /* Μικρότερη σκιά για το Dark Mode */
+    filter: brightness(0.85); /* Λιγότερη φωτεινότητα για το Dark Mode */
+}
+
+/* Εφέ Fade-in κατά την φόρτωση */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

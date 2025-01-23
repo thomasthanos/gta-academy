@@ -1,3 +1,29 @@
+// Επιλέγουμε το στοιχείο κουμπιού
+const switchButton = document.querySelector('.switch');
+
+// Όταν η σελίδα κάνει scroll
+window.addEventListener('scroll', () => {
+    // Παίρνουμε την τρέχουσα θέση κύλισης
+    const scrollPosition = window.scrollY;
+
+    // Ελέγχουμε αν η θέση κύλισης είναι μεγαλύτερη από 80px
+    if (scrollPosition > 80) {
+        // Μετακινείται και αποκτά δυναμικό effect (με εφέ αναλαμπής και μεγέθυνσης)
+        switchButton.style.transform = 'translateX(100px) scale(0.6) rotate(15deg)';
+        switchButton.style.opacity = '0'; // Κρύβουμε το κουμπί
+        switchButton.style.visibility = 'hidden'; // Το κάνει εντελώς αόρατο
+        switchButton.style.pointerEvents = 'none'; // Απενεργοποιούμε το click
+    } else {
+        // Επιστρέφει στην αρχική του θέση με πιο μοντέρνα κίνηση
+        switchButton.style.transform = 'translateX(0) scale(1) rotate(0deg)';
+        switchButton.style.opacity = '1'; // Επαναφορά πλήρους διαφάνειας
+        switchButton.style.visibility = 'visible'; // Το κάνει ξανά ορατό
+        switchButton.style.pointerEvents = 'auto'; // Ενεργοποιούμε το click ξανά
+    }
+});
+
+
+
 // Toggle mobile menu
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
@@ -47,43 +73,44 @@ themeSwitch.addEventListener('change', () => {
   }
 });
 
-// Handle mousemove effect on image container
 const container = document.querySelector('.image-container');
 
-container.addEventListener('mousemove', (e) => {
-  const rect = container.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+if (container) {
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-  const xPercent = (x / rect.width) * 100;
-  const yPercent = (y / rect.height) * 100;
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
 
-  const rotateX = ((yPercent - 50) / 10) * -1; // Περιστροφή στον X άξονα
-  const rotateY = ((xPercent - 50) / 10);      // Περιστροφή στον Y άξονα
+    const rotateX = ((yPercent - 50) / 10) * -1;
+    const rotateY = ((xPercent - 50) / 10);
 
-  container.style.transition = "transform 0.1s ease"; // Γρήγορο transition κατά την κίνηση
-  container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
+    container.style.transition = "transform 0.1s ease";
+    container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
 
-// Handle mouse enter and leave for box shadow effect
-container.addEventListener('mouseenter', () => {
-  container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease"; // Προσθήκη transition
-  if (document.body.classList.contains('dark-mode')) {
-    container.style.boxShadow = "0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39)";
-  } else {
-    container.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2)";
-  }
-});
+  container.addEventListener('mouseenter', () => {
+    container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease";
+    if (document.body.classList.contains('dark-mode')) {
+      container.style.boxShadow = "0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39)";
+    } else {
+      container.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2)";
+    }
+  });
 
-container.addEventListener('mouseleave', () => {
-  container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease"; // Επαναφορά transition
-  container.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-  if (document.body.classList.contains('dark-mode')) {
-    container.style.boxShadow = "0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39)";
-  } else {
-    container.style.boxShadow = "0 25px 30px rgba(0, 0, 0, 0.2), 0 15px 10px rgba(0, 0, 0, 0.1)";
-  }
-});
+  container.addEventListener('mouseleave', () => {
+    container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease";
+    container.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+    if (document.body.classList.contains('dark-mode')) {
+      container.style.boxShadow = "0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39)";
+    } else {
+      container.style.boxShadow = "0 25px 30px rgba(0, 0, 0, 0.2), 0 15px 10px rgba(0, 0, 0, 0.1)";
+    }
+  });
+}
+
 
 // Title hover effect
 // Διασφάλιση ότι το χρώμα είναι το μπλε όταν γίνεται refresh
