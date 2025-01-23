@@ -236,7 +236,7 @@ section h2 {
     margin-top: auto; /* Place the text at the bottom */
     padding: 20px 15px; /* Balanced padding */
     border-radius: 15px; /* Rounded corners for a modern look */
-    background-color: rgba(0, 0, 0, 0.055); /* Default background color */
+    background-color: rgba(187, 37, 37, 0.055); /* Default background color */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle shadow */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
