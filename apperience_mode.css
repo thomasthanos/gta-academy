@@ -125,7 +125,7 @@ body .description {
 }
 
 .description {
-    font-size: 25px;
+    font-size: 18px;
 }
 
 body.dark-mode .description {
@@ -178,6 +178,34 @@ body.dark-mode .image-container:hover {
 section {
     padding: 20px;
 }
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .switch {
+        top: 80px;
+        right: 20px;
+        transform: scale(0.80);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        margin: 0 auto;
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 h2 {
     font-size: 2.5rem !important;
@@ -229,34 +257,6 @@ body.dark-mode h2 {
     justify-items: center;
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    .switch {
-        top: 80px;
-        right: 20px;
-        transform: scale(0.80);
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .card {
-        margin: 0 auto;
-        max-width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
 
 .card {
     background-color: var(--card-bg);

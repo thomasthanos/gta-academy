@@ -2,7 +2,7 @@
 html {
     overflow-y: scroll;
 }
-.card, .description, p, h2, h3, h4, h5, h6 {
+.card, .description, h2, h3, h4, h5, h6 {
     font-family: 'ComicSansLocal', cursive, sans-serif;
 }
 body {
@@ -17,6 +17,9 @@ body {
 
 html::-webkit-scrollbar {
     width: 10px;
+}
+p{
+    font-size: x-large;
 }
 
 html::-webkit-scrollbar-track {
@@ -338,6 +341,9 @@ color: #adadad;
         width: fit-content; /* Ensures the logo takes only its content's width */
         transition: 300ms;
     }
+    p {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -373,5 +379,19 @@ color: #adadad;
         font-size: 20px; /* Further reduced font size for smaller screens */
         letter-spacing: 0.5px;
     }
+    p {
+        font-size: 10px;
+    }
 }
 
+@media (max-width: 768px) {
+    p {
+        font-size: large;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: medium;
+    }
+}
