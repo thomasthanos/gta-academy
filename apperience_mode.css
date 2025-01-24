@@ -145,6 +145,17 @@ body .description {
     border-radius: 1em; /* Round corners για πιο μοντέρνα εμφάνιση */
     transition: box-shadow 0.2s ease, transform 0.2s ease; /* Ομαλή μετάβαση */
 }
+.description .note {
+    text-align: center; /* Κεντρική ευθυγράμμιση κειμένου */
+    color: #ff0000; /* Χρώμα κειμένου (μπορείς να το αλλάξεις όπως θες) */
+    font-weight: bold; /* (Προαιρετικό) Για να τονίζεται περισσότερο */
+    margin-bottom: 0.5em; /* Διάστημα κάτω από το note */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.description {
+    font-size: 25px; /* Προεπιλογή για desktop */
+}
 
 /* Στο Dark Mode */
 body.dark-mode .description {
@@ -273,7 +284,7 @@ body.dark-mode h2 {
     border-bottom: 2px solid #ffffff; /* Add a border under the heading */
 }
 #cars {
-    margin-top: -47px;
+    margin-top: -34px;
   }
   
   #cars h2 {

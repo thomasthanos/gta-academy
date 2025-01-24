@@ -50,9 +50,10 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    background: linear-gradient(90deg, #003366, #3366cc); /* Gradient text with dark blue */
+    background: linear-gradient(90deg, #058197, #058197); /* Gradient text with dark blue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: rgb(255, 255, 255) -2px -2px 0px; /* Σκιά για βάθος */
 }
 
 .menu-container {
@@ -279,32 +280,32 @@ section h2 {
     text-align: justify;
     font-family: 'Arial', sans-serif;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .description {
-        margin-left: 0.5em; /* Smaller left margin on mobile */
-        margin-right: 0.5em; /* Smaller right margin on mobile */
-        padding: 1em; /* Adjust padding for mobile */
-        font-size: 12px; /* Even smaller font size for mobile */
-    }
-}
-
-
 /* Responsive Layout for other sections (e.g. gallery, menu) */
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: 1fr; /* One column for mobile */
-    }
 
+/* Tablets and below (max-width 768px) */
+@media (max-width: 1268px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column for smaller devices */
+    }
+    .description {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 1em;
+        font-size: 14px; /* Slightly larger font for readability */
+    }
+    .description .note {
+        font-size: 14px;
+    }
     .card {
-        width: 90%; /* Slightly smaller width for mobile */
-        max-width: none; /* Remove max-width on small screens */
+        width: 95%; /* More space for smaller devices */
+        max-width: none;
     }
     .card p {
-        width: calc(100% - 60px); /* Adjust width for smaller screens */
-        padding: 15px 10px; /* Slightly smaller padding */
+        width: 100%; /* Ensure full width */
+        padding: 12px 8px; /* Reduced padding for tighter spaces */
     }
+    
+    /* Menu Styles */
     .menu {
         display: none;
         flex-direction: column;
@@ -313,14 +314,16 @@ section h2 {
         height: 100vh;
         position: fixed;
         top: 0;
-        left: 0;
+        left: -100%;
         z-index: 999;
         justify-content: center;
         align-items: center;
+        transition: left 0.5s ease-in-out;
     }
 
     .menu.show {
         display: flex;
+        left: 0;
     }
 
     .menu li {
@@ -333,6 +336,7 @@ section h2 {
         color: white;
         background: none;
         border-radius: 5px;
+        transition: background 0.3s ease;
     }
 
     .menu a:hover {
@@ -341,5 +345,65 @@ section h2 {
 
     .hamburger {
         display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    /* Smooth Fade-In Animation */
+    .menu.show {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .description {
+        font-size: 3vw !important; /* Δυναμικό μέγεθος γραμματοσειράς με βάση το πλάτος της οθόνης */
+    }
+    .description .note {
+        font-size: 3vw!important;
+    }
+}
+
+/* Mobile and smaller devices (max-width 480px) */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column for mobile */
+    }
+    .description {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 0.8em;
+        font-size: 12px; /* Even smaller font size for very small screens */
+    }
+    .description .note {
+        font-size: 12px;
+    }
+    .card {
+        width: 100%; /* Full width on very small screens */
+        max-width: none;
+    }
+    .card p {
+        width: 100%; /* Full width */
+        padding: 10px 5px; /* Adjust padding for tighter spaces */
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .description {
+        font-size: 2.5vw!important; /* Μικρότερο μέγεθος για πολύ μικρές οθόνες */
+    }
+    .description .note {
+        font-size: 2.5vw!important;
     }
 }
