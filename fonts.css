@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'ComicSansLocal';
+    src: url('./fonts/comic_sans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'squid';
+    src: url('./fonts/Game_Of_Squids.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'typwrng';
+    src: url('./fonts/typwrng.ttf') format('truetype');
+}
