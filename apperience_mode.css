@@ -113,9 +113,8 @@ body.dark-mode .switch::before {
 .input__check:checked + .slider:before {
     transform: translateX(1.5em);
 }
-/* Σκοτεινός τρόπος */
 body, .card, .description, .title, p, h1, h2, h3, h4, h5, h6 {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans γραμματοσειρά */
+    font-family: 'ComicSansLocal', cursive, sans-serif;
 }
 
 /* Στυλ για Dark Mode */
