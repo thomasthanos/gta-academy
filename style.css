@@ -2,6 +2,9 @@
 html {
     overflow-y: scroll;
 }
+h5 {
+    font-size: 24px; /* Default μέγεθος για desktop */
+}
 .card, .description, h2, h3, h4, h5, h6 {
     font-family: 'ComicSansLocal', cursive, sans-serif;
 }
@@ -261,6 +264,15 @@ color: #adadad;
     font-family: 'Arial', sans-serif;
 }
 
+
+@media (max-width: 1368px) {
+    h5 {
+        font-size: 20px; /* Μειωμένο μέγεθος */
+    }
+    h4{
+        font-size: 14px;
+    }
+}
 @media (max-width: 1268px) {
     .description {
         margin-left: 0.5em;
@@ -347,25 +359,31 @@ color: #adadad;
         font-size: 18px;
     }
 }
-
 @media (max-width: 768px) {
     p {
-        font-size: large;
+        font-size: 22px;
     }
     h4{
         font-size: 15px;
     }
-}
-
-@media (max-width: 480px) {
-    p {
-        font-size: medium;
+    h5 {
+        font-size: 14px; /* Ακόμα μικρότερο */
     }
+}
+@media (max-width: 580px) {
     h4{
         font-size: 12px;
     }
     h5{
-        font-size: 10px;
+        font-size: 11px;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 520px) {
+    p {
+        font-size: 17px;
     }
 }
 @media (max-width: 480px) {
@@ -395,28 +413,5 @@ color: #adadad;
         font-size: 20px; /* Further reduced font size for smaller screens */
         letter-spacing: 0.5px;
     }
-    p {
-        font-size: 10px;
-    }
-}
-h5 {
-    font-size: 24px; /* Default μέγεθος για desktop */
-}
 
-@media (max-width: 1268px) {
-    h5 {
-        font-size: 20px; /* Μειωμένο μέγεθος */
-    }
-}
-
-@media (max-width: 768px) {
-    h5 {
-        font-size: 14px; /* Ακόμα μικρότερο */
-    }
-}
-
-@media (max-width: 480px) {
-    h5 {
-        font-size: 11px; /* Πολύ μικρό */
-    }
 }

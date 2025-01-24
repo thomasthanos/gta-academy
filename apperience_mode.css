@@ -412,7 +412,7 @@ body.dark-mode .menu a:hover {
 /* Tablet styles (2 columns) */
 @media (max-width: 1368px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+        grid-template-columns: repeat(1, 1fr); /* 2 columns for tablet */
         gap: 30px; /* Adjust gap for smaller screens */
     }
 }
