@@ -21,7 +21,12 @@ html::-webkit-scrollbar {
 p{
     font-size: x-large;
 }
-
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 20px;
+}
 html::-webkit-scrollbar-track {
     background: #c9d6df;
     border-radius: 4px;
@@ -207,7 +212,7 @@ color: #adadad;
     text-align: justify;
     background-color: #f2f3f7;
     border-radius: 0.75em;
-    padding: 1em 2em;
+    padding: 0em 2em 0.5em 2em;
     box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
     border: 1.5px solid #f2f3f7;
     cursor: pointer;
@@ -266,9 +271,6 @@ color: #adadad;
     #home h1 {
         font-size: 24px; /* Smaller font size for mobile */
         letter-spacing: 1px; /* Adjust letter spacing for readability */
-    }
-    .description .note {
-        font-size: 14px;
     }
     .card {
         width: 95%;
@@ -331,9 +333,6 @@ color: #adadad;
     .description {
         font-size: 3vw !important;
     }
-    .description .note {
-        font-size: 3vw!important;
-    }
     .logo {
         text-align: center; /* Centers the text inside its container */
         display: block;     /* Ensures the element behaves like a block for alignment */
@@ -344,16 +343,36 @@ color: #adadad;
     p {
         font-size: 20px;
     }
+    h4{
+        font-size: 18px;
+    }
 }
 
+@media (max-width: 768px) {
+    p {
+        font-size: large;
+    }
+    h4{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: medium;
+    }
+    h4{
+        font-size: 12px;
+    }
+    h5{
+        font-size: 10px;
+    }
+}
 @media (max-width: 480px) {
     .description {
         margin-left: 0.5em;
         margin-right: 0.5em;
         padding: 0.8em;
-        font-size: 12px;
-    }
-    .description .note {
         font-size: 12px;
     }
     .card {
@@ -372,9 +391,6 @@ color: #adadad;
     .description {
         font-size: 2.5vw!important;
     }
-    .description .note {
-        font-size: 2.5vw!important;
-    }
     #home h1 {
         font-size: 20px; /* Further reduced font size for smaller screens */
         letter-spacing: 0.5px;
@@ -383,15 +399,24 @@ color: #adadad;
         font-size: 10px;
     }
 }
+h5 {
+    font-size: 24px; /* Default μέγεθος για desktop */
+}
+
+@media (max-width: 1268px) {
+    h5 {
+        font-size: 20px; /* Μειωμένο μέγεθος */
+    }
+}
 
 @media (max-width: 768px) {
-    p {
-        font-size: large;
+    h5 {
+        font-size: 14px; /* Ακόμα μικρότερο */
     }
 }
 
 @media (max-width: 480px) {
-    p {
-        font-size: medium;
+    h5 {
+        font-size: 11px; /* Πολύ μικρό */
     }
 }
