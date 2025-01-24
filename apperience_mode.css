@@ -1,26 +1,15 @@
-
-
 .switch {
     font-size: 17px;
-    position: fixed; /* Σταθερή θέση πάνω στην οθόνη */
-    top: 90px; /* Απόσταση από την κορυφή */
-    right: 70px; /* Απόσταση από τα δεξιά */
+    position: fixed;
+    top: 90px;
+    right: 70px;
     width: 3.5em;
     height: 2em;
-    opacity: 1; /* Αρχική ορατότητα */
-    visibility: visible; /* Ξεκινάμε το κουμπί ορατό */
-    z-index: 1000; /* Υψηλότερη προτεραιότητα από τα υπόλοιπα στοιχεία */
-    transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.3s ease; /* Ομαλό animation για κίνηση, διαφάνεια και ορατότητα */
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.3s ease;
 }
-
-
-
-
-/* Όλες οι άλλες ρυθμίσεις παραμένουν όπως είναι */
-
-
-/* Όλες οι υπόλοιπες ρυθμίσεις παραμένουν όπως είναι */
-
 
 .switch::before {
     content: "";
@@ -32,17 +21,19 @@
     filter: blur(2px);
     z-index: -1;
     border-radius: 50px;
-    background-color: #FFEB3B; /* Sunshine Yellow */
-    background-image: radial-gradient(at 21% 46%, #FFC107 0px, transparent 50%), /* Golden Yellow */
-                      radial-gradient(at 23% 25%, #FF5722 0px, transparent 50%), /* Orange */
-                      radial-gradient(at 20% 1%, #FF9800 0px, transparent 50%); /* Warm Gold */
-    box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.5), 0 0 15px 3px rgba(255, 87, 34, 0.5), 0 0 20px 3px rgba(255, 152, 0, 0.6); /* Sunlit shadows */
+    background-color: #FFEB3B;
+    background-image: radial-gradient(at 21% 46%, #FFC107 0px, transparent 50%),
+                      radial-gradient(at 23% 25%, #FF5722 0px, transparent 50%),
+                      radial-gradient(at 20% 1%, #FF9800 0px, transparent 50%);
+    box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.5), 0 0 15px 3px rgba(255, 87, 34, 0.5), 0 0 20px 3px rgba(255, 152, 0, 0.6);
 }
+
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -53,8 +44,9 @@
     background-color: #ffffffdc;
     transition: .4s;
     border-radius: 30px;
-    box-shadow: none; /* Αφαίρεσα το εσωτερικό shadow */
+    box-shadow: none;
 }
+
 body .slider:before {
     position: absolute;
     content: "";
@@ -64,11 +56,12 @@ body .slider:before {
     bottom: 0.35em;
     transition: .4s;
     border-radius: 50%;
-    background-color: #FFEB3B; /* Sunshine Yellow */
-    background-image: radial-gradient(at 81% 39%, #FFC107 0px, transparent 50%), /* Golden Yellow */
-                      radial-gradient(at 11% 72%, #FF5722 0px, transparent 50%), /* Orange */
-                      radial-gradient(at 23% 20%, #FF9800 0px, transparent 50%); /* Warm Gold */
+    background-color: #FFEB3B;
+    background-image: radial-gradient(at 81% 39%, #FFC107 0px, transparent 50%),
+                      radial-gradient(at 11% 72%, #FF5722 0px, transparent 50%),
+                      radial-gradient(at 23% 20%, #FF9800 0px, transparent 50%);
 }
+
 body.dark-mode .slider:before {
     position: absolute;
     content: "";
@@ -78,11 +71,12 @@ body.dark-mode .slider:before {
     bottom: 0.35em;
     transition: .4s;
     border-radius: 50%;
-    background-color: #000000; /* Σκούρο μπλε για τη βάση του κουμπιού */
-    background-image: radial-gradient(at 81% 39%, #90c1e9 0px, transparent 50%), /* Απαλό γκρι μπλε (φεγγάρι) */
-                      radial-gradient(at 11% 72%, #283C5B 0px, transparent 50%), /* Σκούρο μπλε (νυχτερινός ουρανός) */
-                      radial-gradient(at 23% 20%, #1A2531 0px, transparent 50%); /* Σχεδόν μαύρο μπλε (βαθύ ουρανός) */
+    background-color: #000000;
+    background-image: radial-gradient(at 81% 39%, #90c1e9 0px, transparent 50%),
+                      radial-gradient(at 11% 72%, #283C5B 0px, transparent 50%),
+                      radial-gradient(at 23% 20%, #1A2531 0px, transparent 50%);
 }
+
 body.dark-mode .switch::before {
     content: "";
     position: absolute;
@@ -93,19 +87,13 @@ body.dark-mode .switch::before {
     filter: blur(2px);
     z-index: -1;
     border-radius: 50px;
-    background-color: #34495E; /* Σκούρο μπλε για τη βάση του κουμπιού */
-    background-image: radial-gradient(at 21% 46%, #BDC3C7 0px, transparent 50%), /* Φως φεγγαριού - ασημί */
-                      radial-gradient(at 23% 25%, #95A5A6 0px, transparent 50%), /* Απαλό γκρι για φως φεγγαριού */
-                      radial-gradient(at 20% 1%, #7F8C8D 0px, transparent 50%); /* Σκοτεινό γκρι-μπλε για τον ουρανό της νύχτας */
-    box-shadow: 0 0 15px 5px rgba(189, 195, 199, 0.6), 0 0 10px 5px rgba(52, 152, 219, 0.5), 0 0 30px 0px rgba(189, 195, 199, 0.8); /* Σκιές από φως φεγγαριού και αστέρια */
+    background-color: #34495E;
+    background-image: radial-gradient(at 21% 46%, #BDC3C7 0px, transparent 50%),
+                      radial-gradient(at 23% 25%, #95A5A6 0px, transparent 50%),
+                      radial-gradient(at 20% 1%, #7F8C8D 0px, transparent 50%);
+    box-shadow: 0 0 15px 5px rgba(189, 195, 199, 0.6), 0 0 10px 5px rgba(52, 152, 219, 0.5), 0 0 30px 0px rgba(189, 195, 199, 0.8);
 }
 
-
-
-
-
-
-/* Σκοτεινός τρόπος */
 .input__check:checked + .slider {
     background-color: #17202A;
 }
@@ -113,215 +101,186 @@ body.dark-mode .switch::before {
 .input__check:checked + .slider:before {
     transform: translateX(1.5em);
 }
+
 body, .card, .description, .title, p, h1, h2, h3, h4, h5, h6 {
     font-family: 'ComicSansLocal', cursive, sans-serif;
 }
 
-/* Στυλ για Dark Mode */
 body.dark-mode {
     background-color: #121212;
-    color: white; /* Άσπρο κείμενο στο Dark Mode */
+    color: white;
     transition: background 0.5s, color 0.5s;
 }
 
-/* Στο Light Mode */
 body {
-    color: #121212; /* Μαύρο κείμενο στο Light Mode */
+    color: #121212;
     font-weight: bolder;
 }
 
-/* Στο Light Mode */
 body .card {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Ελαφρύ gradient */
-    color: #121212; /* Μαύρο κείμενο */
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #121212;
 }
 
-/* Στο Light Mode */
 body .description {
-    color: #333; /* Σκούρο γκρι κείμενο για καλύτερη αναγνωσιμότητα */
-    background-color: #ffffff; /* Λευκό φόντο για πιο καθαρό look */
-    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8); /* Μειωμένο shadow blur */
-    border-radius: 1em; /* Round corners για πιο μοντέρνα εμφάνιση */
-    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Ομαλή μετάβαση */
+    color: #333;
+    background-color: #ffffff;
+    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8);
+    border-radius: 1em;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
+
 .description .note {
-    text-align: center; /* Κεντρική ευθυγράμμιση κειμένου */
-    color: #ff0000; /* Χρώμα κειμένου (μπορείς να το αλλάξεις όπως θες) */
-    font-weight: bold; /* (Προαιρετικό) Για να τονίζεται περισσότερο */
-    margin-bottom: 0.5em; /* Διάστημα κάτω από το note */
+    text-align: center;
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 0.5em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .description {
-    font-size: 25px; /* Προεπιλογή για desktop */
+    font-size: 25px;
 }
 
-/* Στο Dark Mode */
 body.dark-mode .description {
-    color: #e0e0e0; /* Ανοιχτό γκρι κείμενο */
-    background-color: #24252e; /* Σκοτεινό μπλε-γκρι φόντο για καλύτερη αντίθεση */
-    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.1); /* Μειωμένο shadow blur */
-    border-radius: 1em; /* Round corners για πιο μοντέρνα εμφάνιση */
-    border: 1.5px solid #3a3b44; /* Ελαφρώς διαφορετικό border χρώμα από το φόντο */
-    transition: box-shadow 0.2s ease, background-color 0.3s ease, border 0.2s ease, transform 0.2s ease; /* Ομαλή μετάβαση για το box-shadow, background-color, και border */
+    color: #e0e0e0;
+    background-color: #24252e;
+    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.1);
+    border-radius: 1em;
+    border: 1.5px solid #3a3b44;
+    transition: box-shadow 0.2s ease, background-color 0.3s ease, border 0.2s ease, transform 0.2s ease;
 }
 
-/* Στο Light Mode */
 body .description {
-    color: #333; /* Σκούρο γκρι κείμενο για καλύτερη αναγνωσιμότητα */
-    background-color: #ffffff; /* Λευκό φόντο για πιο καθαρό look */
-    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8); /* Μειωμένο shadow blur */
-    border-radius: 1em; /* Round corners για πιο μοντέρνα εμφάνιση */
-    transition: box-shadow 0.2s ease, background-color 0.3s ease, transform 0.2s ease; /* Ομαλή μετάβαση για το box-shadow και background-color */
+    color: #333;
+    background-color: #ffffff;
+    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8);
+    border-radius: 1em;
+    transition: box-shadow 0.2s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
-
-/* Στο Dark Mode Hover Effect */
 body.dark-mode .description:hover {
-    background-color: #333840; /* Ανοιχτότερο φόντο στο hover για το Dark Mode */
-    border: 1.5px solid #5a5b6b; /* Διαφορετικό border χρώμα κατά το hover στο Dark Mode */
-    color: #f0f0f0; /* Άσπρο κείμενο στο hover για το Dark Mode */
+    background-color: #333840;
+    border: 1.5px solid #5a5b6b;
+    color: #f0f0f0;
 }
 
-
-
-/* Στο Dark Mode */
 body.dark-mode .card {
-    background: linear-gradient(145deg, #212429, #212429); /* Μαύρο φόντο στην κάρτα */
+    background: linear-gradient(145deg, #212429, #212429);
     border: 2px solid #3c3d47;
     color: red;
 }
 
-/* Στο Light Mode */
 body .title, body p, body h1, body h2, body h3, body h4, body h5, body h6 {
-    color: #121212; /* Μαύρο κείμενο στο Light Mode */
+    color: #121212;
 }
 
-/* Στο Dark Mode */
 body.dark-mode .title, body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
-    color: #ffffff; /* Άσπρο κείμενο στο Dark Mode */
+    color: #ffffff;
 }
 
-
-/* Εφαρμόζουμε τα στυλ για το light mode */
 body.light-mode .image-container {
     background: linear-gradient(145deg, #ffffff, #f3f3f3);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2); /* Σκιά από προεπιλογή */
-  }
-  
-  /* Εφαρμόζουμε τα στυλ για το dark mode */
-  body.dark-mode .image-container {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .image-container {
     background: linear-gradient(145deg, #1f1f1f, #292929);
-    /* Πολύ μικρότερη απόσταση και blur για τη σκιά στο dark mode */
-    box-shadow: 
-    0 5px 10px rgba(50, 60, 90, 0.2), 
-    -10px 10px 15px rgba(60, 70, 100, 0.918), 
-    inset 0 5px 10px rgba(50, 60, 90, 0.2), 
-    inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39); /* Εσωτερική σκιά με την ίδια κατεύθυνση και απόσταση */
+    box-shadow: 0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39);
+}
 
-  }
-  
-  body.light-mode .image-container:hover {
-    /* Σκιές για light mode όταν είναι σε hover */
+body.light-mode .image-container:hover {
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  body.dark-mode .image-container:hover {
-    /* Σκιές για dark mode όταν είναι σε hover με ενίσχυση */
+}
+
+body.dark-mode .image-container:hover {
     box-shadow: 0 35px 70px rgba(50, 60, 90, 0.6), 0 25px 25px rgba(60, 70, 100, 0.3);
-  }
-/* Στυλ για dark mode */
+}
+
 body.dark-mode #home h1 {
-    color: #f0f0f0; /* Φωτεινό χρώμα για τον τίτλο στο dark mode */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Ενισχυμένη σκιά για καλύτερη αναγνωσιμότητα */
+    color: #f0f0f0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Στυλ για light mode */
 body.light-mode #home h1 {
-    color: #333; /* Σκούρο χρώμα για τον τίτλο στο light mode */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Ελαφριά σκιά για βάθος */
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Εφέ hover για dark mode */
 body.dark-mode #home h1:hover {
-    color: #1677ff; /* Αλλαγή χρώματος κατά το hover στο dark mode */
-    text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.7); /* Λευκή σκιά στο hover για dark mode */
-    transform: scale(1.05); /* Ελαφριά μεγέθυνση κατά το hover */
+    color: #1677ff;
+    text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
 }
 
-/* Εφέ hover για light mode */
 body.light-mode #home h1:hover {
-    color: #1677ff; /* Αλλαγή χρώματος κατά το hover στο light mode */
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); /* Σκούρα σκιά στο hover για light mode */
-    transform: scale(1.05); /* Ελαφριά μεγέθυνση κατά το hover */
+    color: #1677ff;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
 }
-
-
-
-
 
 section {
     padding: 20px;
 }
 
 h2 {
-    font-size: 2.5rem !important; /* Set the font size */
-    font-weight: bold; /* Make the text bold */
-    color: #ff4500; /* Choose the color */
-    text-align: center; /* Align text to the center */
-    text-transform: uppercase; /* Make text uppercase */
-    letter-spacing: 2px; /* Space between letters */
-    padding: 10px 0; /* Add padding around the text */
+    font-size: 2.5rem !important;
+    font-weight: bold;
+    color: #ff4500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 0;
     margin-top: -34px;
-    font-family: 'Arial', sans-serif; /* Set a custom font */
+    font-family: 'Arial', sans-serif;
 }
+
 h2 {
     color: #002b53fb;
-    border-bottom: 2px solid #000000; /* Add a border under the heading */
+    border-bottom: 2px solid #000000;
 }
+
 body.dark-mode h2 {
-    border-bottom: 2px solid #ffffff; /* Add a border under the heading */
+    border-bottom: 2px solid #ffffff;
 }
+
 #cars {
     margin-top: -34px;
-  }
-  
-  #cars h2 {
+}
+
+#cars h2 {
     margin-top: -25px;
-  }
-  
-/* Light Mode Styles */
+}
+
 body.light-mode {
     background-color: #ffffff;
     color: #1d2b69;
 }
 
-/* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
+
 body.dark-mode h2 {
-    color: #4fbff1; /* Soft cyan for modern dark mode aesthetic */
+    color: #4fbff1;
 }
-
-
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default for PC */
-    gap: 70px; /* Gap for PC */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
     justify-items: center;
 }
 
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-        gap: 30px; /* Reduced gap for smaller screens */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
     .switch {
-        top: 80px; /* Φέρνουμε τη θέση πιο χαμηλά */
-        right: 20px; /* Μειώνουμε την απόσταση από τα δεξιά */
+        top: 80px;
+        right: 20px;
         transform: scale(0.80);
     }
 }
@@ -331,15 +290,15 @@ body.dark-mode h2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Smaller gap for mobile */
+        gap: 20px;
     }
 
     .card {
-        margin: 0 auto; /* Center the card on mobile */
-        max-width: 90%; /* Limit width for better appearance on small screens */
+        margin: 0 auto;
+        max-width: 90%;
         display: flex;
-        justify-content: center; /* Center content inside the card */
-        align-items: center; /* Ensure vertical alignment */
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -349,12 +308,12 @@ body.dark-mode h2 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 550px; /* Maximum width for cards */
+    max-width: 550px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover {
@@ -362,8 +321,6 @@ body.dark-mode h2 {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-
-/* Light Mode */
 body.light-mode {
     --card-bg: #ffffff;
     --card-content-bg: #f9f9f9;
@@ -374,7 +331,6 @@ body.light-mode {
     color: #333;
 }
 
-/* Dark Mode */
 body.dark-mode {
     --card-bg: #1e1e2f;
     --card-content-bg: #2b2b3c;
@@ -385,7 +341,6 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-/* Toggle Button for Dark/Light Mode */
 .mode-toggle {
     position: fixed;
     top: 20px;
@@ -404,46 +359,45 @@ body.dark-mode {
     background-color: var(--card-content-bg);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-/* Στυλ για το Light Mode */
+
 body.light-mode .card img {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.651); /* Μικρότερο blur για το Light Mode */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.651);
 }
 
 body.light-mode .card img:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.603); /* Μικρότερη σκιά για το Light Mode */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.603);
     filter: contrast(100%);
 }
 
-/* Στυλ για το Dark Mode */
 body.dark-mode .card img {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425); /* Μικρότερο blur για το Dark Mode */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425);
 }
+
 body.dark-mode .card p {
-    width: calc(100% - 90px); /* Ensure the width is appropriate */
+    width: calc(100% - 90px);
     text-align: center;
     font-size: 20px;
     display: flex;
     justify-content: center;
-    align-items: center; /* Perfect vertical alignment */
-    margin-top: auto; /* Place the text at the bottom */
-    padding: 20px 15px; /* Balanced padding */
-    border-radius: 15px; /* Rounded corners for a modern look */
-    background-color: #071b3125; /* Default background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.226), 0 1px 3px rgba(0, 0, 0, 0.26); /* Subtle shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    align-items: center;
+    margin-top: auto;
+    padding: 20px 15px;
+    border-radius: 15px;
+    background-color: #071b3125;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.226), 0 1px 3px rgba(0, 0, 0, 0.26);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
 body.dark-mode .card p:hover {
-    background-color: rgba(4, 16, 29, 0.145); /* Darker background on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
-}
-body.dark-mode .card img:hover {
-    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.479); /* Μικρότερη σκιά για το Dark Mode */
-    filter: brightness(0.85); /* Λιγότερη φωτεινότητα για το Dark Mode */
+    background-color: rgba(4, 16, 29, 0.145);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Εφέ Fade-in κατά την φόρτωση */
+body.dark-mode .card img:hover {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.479);
+    filter: brightness(0.85);
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -452,6 +406,3 @@ body.dark-mode .card img:hover {
         opacity: 1;
     }
 }
-
-
-

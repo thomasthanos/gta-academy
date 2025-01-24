@@ -1,5 +1,5 @@
 html {
-    overflow-y: scroll; /* Εξασφαλίζει ότι το scrollbar θα εμφανίζεται */
+    overflow-y: scroll;
 }
 @font-face {
     font-family: 'ComicSansLocal';
@@ -13,54 +13,54 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    height: 200vh; /* Προσωρινά για να υπάρχει αρκετό περιεχόμενο */
-    scroll-behavior: smooth; /* Smooth scrolling για την κύλιση */
-    scrollbar-width: thin; /* Για Firefox */
-    scrollbar-color: #4e6e7d #c9d6df; /* Εντονότερο χρώμα για Thumb και Track για Firefox */
-    padding-top: 60px; /* Αφήνουμε χώρο κάτω από το μενού */
+    height: 200vh;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #4e6e7d #c9d6df;
+    padding-top: 60px;
 }
 
 html::-webkit-scrollbar {
-    width: 10px; /* Εντονότερο πλάτος του scrollbar */
+    width: 10px;
 }
 
 html::-webkit-scrollbar-track {
-    background: #c9d6df; /* Ελαφρύ γκρι με πιο έντονη απόχρωση για το track */
-    border-radius: 4px; /* Ελαφρύ border-radius */
+    background: #c9d6df;
+    border-radius: 4px;
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #4e6e7d; /* Πιο έντονο μπλε-πράσινο για το thumb */
-    border-radius: 4px; /* Ελαφρύ border-radius */
-    transition: background 0.3s ease-in-out; /* Απαλό εφέ κατά την αλλαγή χρώματος */
+    background: #4e6e7d;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-    background: #3b545f; /* Πιο σκούρο μπλε-πράσινο για το hover */
+    background: #3b545f;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(135deg, #333333, #444444); /* Σκούρο αθρακι gradient φόντο */
+    background: linear-gradient(135deg, #333333, #444444);
     color: white;
     z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Ενισχυμένο shadow για μεγαλύτερο βάθος */
-    border-bottom: 4px solid #444444; /* Οριοθέτηση με μια σκούρα αθρακι γραμμή */
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Γραμματοσειρά Comic Sans */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border-bottom: 4px solid #444444;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     font-size: 18px;
-    letter-spacing: 1px; /* Ξεχωριστές αποστάσεις για πιο κομψό αποτέλεσμα */
-    text-transform: uppercase; /* Μεγαλύτερη ένταση στους τίτλους */
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    background: linear-gradient(90deg, #058197, #058197); /* Gradient text with dark blue */
+    background: linear-gradient(90deg, #058197, #058197);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: rgb(255, 255, 255) -2px -2px 0px; /* Σκιά για βάθος */
+    text-shadow: rgb(255, 255, 255) -2px -2px 0px;
 }
 
 .menu-container {
@@ -68,13 +68,13 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    position: fixed; /* Σταθερό στη θέση του */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2000; /* Υψηλότερο από το κουμπί */
-    background-color: #333; /* Προσθέστε χρώμα φόντου για να είναι ευδιάκριτο */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Προσθήκη σκιάς για βάθος */
+    z-index: 2000;
+    background-color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .menu {
@@ -102,7 +102,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Responsive για μικρές οθόνες */
 .hamburger {
     display: none;
     background: none;
@@ -118,39 +117,37 @@ header {
 }
 
 section h2 {
-    text-align: center; /* Κεντράρισμα κειμένου */
-    font-size: 24px; /* Προσαρμογή μεγέθους γραμματοσειράς */
-    margin-bottom: 20px; /* Απόσταση από το περιεχόμενο */
-    color: #333; /* Χρώμα γραμματοσειράς */
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Home Section */
 #home {
     padding: 80px 20px 40px;
     text-align: center;
 }
 
 #home h1 {
-    font-size: 36px; /* Μεγαλύτερο μέγεθος γραμματοσειράς */
-    font-weight: bold; /* Παχύς τίτλος */
-    text-transform: uppercase; /* Μεγέθυνση όλων των γραμμάτων */
-    letter-spacing: 2px; /* Απόσταση μεταξύ των γραμμάτων */
-    margin: 0; /* Βεβαιωθείτε ότι δεν υπάρχει περιττό περιθώριο γύρω από το h1 */
-    padding: 0; /* Αφαίρεση οποιουδήποτε padding */
-    display: inline-block; /* Βεβαιώνουμε ότι το h1 έχει μόνο την περιοχή του κειμένου */
-    cursor: pointer; /* Προσθήκη δείκτη για το hover */
-    font-family: 'Arial', sans-serif; /* Επιλογή γραμματοσειράς */
-    transition: all 0.3s ease; /* Ομαλή μετάβαση για αλλαγές */
-    line-height: 1.4; /* Επαρκής απόσταση μεταξύ των γραμμών */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Ελαφριά σκιά για βάθος */
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #home h1:hover {
-    color: #1677ff; /* Χρώμα κατά το hover (μπλε) */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Ενίσχυση της σκιάς */
-    transform: scale(1.05); /* Ελαφριά αύξηση μεγέθους για ένταση */
+    color: #1677ff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
 }
-
 
 .image-container {
     margin: 20px auto;
@@ -164,97 +161,78 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease, box-shadow 1.5s ease; /* Εδώ είναι το κλειδί */
+    transition: transform 1s ease, box-shadow 1.5s ease;
     perspective: 1200px;
 }
 
 .image-container:hover {
     transform: perspective(1200px) rotateX(8deg) rotateY(-8deg) scale(1.05);
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 1s ease, box-shadow 1.5s ease; /* Πιο smooth hover effect */
+    transition: transform 1s ease, box-shadow 1.5s ease;
 }
 
-  
-  .main-image {
+.main-image {
     width: 100%;
     max-height: 100%;
-    border-radius: 20px; /* Στρογγυλεμένες γωνίες για cozy αίσθηση */
-    border: none; /* Αφαιρούμε το παραδοσιακό border */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1); /* Πιο απαλό shadow για την εικόνα */
-    transition: transform 1.5s ease, filter 1.5s ease; /* Πιο αργό animation για zoom και φωτεινότητα */
-  }
-  
-  .image-container:hover .main-image {
-    transform: scale(1.02) rotate(0deg); /* Ελαφρύ zoom για cozy αίσθηση */
-    filter: brightness(1.2) contrast(1.1); /* Ενίσχυση φωτεινότητας και αντίθεσης για μοντέρνο look */
-    transition: transform 1s ease, filter 1s ease; /* Πιο αργό και smooth hover effect */
-  }
-  
-  
-  
-  
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1.5s ease, filter 1.5s ease;
+}
 
+.image-container:hover .main-image {
+    transform: scale(1.02) rotate(0deg);
+    filter: brightness(1.2) contrast(1.1);
+    transition: transform 1s ease, filter 1s ease;
+}
 
-
-
-
-
-
-
-  
-
-
-/* Description section */
 .description {
     margin-top: 35px;
-    margin-left: 15em;  /* Space on the left */
-    margin-right: 15em; /* Space on the right */
+    margin-left: 15em;
+    margin-right: 15em;
     font-size: 16px;
     line-height: 1.6;
     color: #555;
     text-align: justify;
-    background-color: #f2f3f7; /* Added background color */
-    border-radius: 0.75em; /* Added border-radius */
-    padding: 1em 2em; /* Added extra padding for left and right */
-    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff; /* Shadow effect */
-    border: 1.5px solid #f2f3f7; /* Border added */
-    cursor: pointer; /* Pointer cursor for hover effect */
-    transition: ease 0.2s; /* Smooth transition */
+    background-color: #f2f3f7;
+    border-radius: 0.75em;
+    padding: 1em 2em;
+    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
+    border: 1.5px solid #f2f3f7;
+    cursor: pointer;
+    transition: ease 0.2s;
 }
-
 
 .description:hover {
-    background-color: #d3ddf1; /* Hover background color */
-    border: 1.5px solid #1677ff; /* Hover border color */
+    background-color: #d3ddf1;
+    border: 1.5px solid #1677ff;
 }
 
-/* Gallery */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Δύο στήλες για μεγάλες οθόνες */
-    gap: 20px; /* Απόσταση μεταξύ των καρτών */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     justify-items: center;
 }
+
 .card p {
-    width: calc(100% - 90px); /* Ensure the width is appropriate */
+    width: calc(100% - 90px);
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center; /* Perfect vertical alignment */
-    margin-top: auto; /* Place the text at the bottom */
-    padding: 20px 15px; /* Balanced padding */
-    border-radius: 15px; /* Rounded corners for a modern look */
-    background-color: rgba(187, 37, 37, 0.055); /* Default background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    align-items: center;
+    margin-top: auto;
+    padding: 20px 15px;
+    border-radius: 15px;
+    background-color: rgba(187, 37, 37, 0.055);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
 .card p:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Darker background on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .card:hover {
     transform: translateY(-10px);
@@ -262,20 +240,19 @@ section h2 {
 }
 
 .card img {
-    width: calc(95% - 20px); /* Μικραίνει την εικόνα για να μην ακουμπάει το πλαίσιο */
-    aspect-ratio: 16 / 9; /* Σταθερή αναλογία πλάτους-ύψους */
-    object-fit: cover; /* Εξασφαλίζει ότι η εικόνα γεμίζει σωστά */
-    border-radius: 12px; /* Στρογγυλεμένες γωνίες */
-    margin: 28px 0; /* Απόσταση πάνω και κάτω από την εικόνα */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* Απλές μεταβάσεις */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Βαθιά σκιά για περισσότερο βάθος */
+    width: calc(95% - 20px);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 28px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Εφέ hover για απαλή μεγέθυνση, έντονη σκιά και φωτεινότητα */
 .card img:hover {
-    transform: scale(1.05); /* Απαλή μεγέθυνση */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Ισχυρότερη σκιά για πιο μοντέρνο εφέ */
-    opacity: 1; /* Διατηρεί την αδιαφάνεια για πιο φωτεινό αποτέλεσμα */
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    opacity: 1;
     filter: contrast(115%);
 }
 
@@ -287,32 +264,28 @@ section h2 {
     text-align: justify;
     font-family: 'Arial', sans-serif;
 }
-/* Responsive Layout for other sections (e.g. gallery, menu) */
 
-/* Tablets and below (max-width 768px) */
 @media (max-width: 1268px) {
     .gallery {
-        grid-template-columns: 1fr; /* One column for smaller devices */
+        grid-template-columns: 1fr;
     }
     .description {
         margin-left: 0.5em;
         margin-right: 0.5em;
         padding: 1em;
-        font-size: 14px; /* Slightly larger font for readability */
+        font-size: 14px;
     }
     .description .note {
         font-size: 14px;
     }
     .card {
-        width: 95%; /* More space for smaller devices */
+        width: 95%;
         max-width: none;
     }
     .card p {
-        width: 100%; /* Ensure full width */
-        padding: 12px 8px; /* Reduced padding for tighter spaces */
+        width: 100%;
+        padding: 12px 8px;
     }
-    
-    /* Menu Styles */
     .menu {
         display: none;
         flex-direction: column;
@@ -327,16 +300,13 @@ section h2 {
         align-items: center;
         transition: left 0.5s ease-in-out;
     }
-
     .menu.show {
         display: flex;
         left: 0;
     }
-
     .menu li {
         margin: 15px 0;
     }
-
     .menu a {
         font-size: 18px;
         padding: 15px 30px;
@@ -345,22 +315,17 @@ section h2 {
         border-radius: 5px;
         transition: background 0.3s ease;
     }
-
     .menu a:hover {
         background: linear-gradient(90deg, #ff7e5f, #feb47b);
     }
-
     .hamburger {
         display: block;
         cursor: pointer;
         z-index: 1000;
     }
-
-    /* Smooth Fade-In Animation */
     .menu.show {
         animation: fadeIn 0.5s ease-in-out;
     }
-
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -372,43 +337,41 @@ section h2 {
         }
     }
     .description {
-        font-size: 3vw !important; /* Δυναμικό μέγεθος γραμματοσειράς με βάση το πλάτος της οθόνης */
+        font-size: 3vw !important;
     }
     .description .note {
         font-size: 3vw!important;
     }
 }
 
-/* Mobile and smaller devices (max-width 480px) */
 @media (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr; /* One column for mobile */
+        grid-template-columns: 1fr;
     }
     .description {
         margin-left: 0.5em;
         margin-right: 0.5em;
         padding: 0.8em;
-        font-size: 12px; /* Even smaller font size for very small screens */
+        font-size: 12px;
     }
     .description .note {
         font-size: 12px;
     }
     .card {
-        width: 100%; /* Full width on very small screens */
+        width: 100%;
         max-width: none;
     }
     .card p {
-        width: 100%; /* Full width */
-        padding: 10px 5px; /* Adjust padding for tighter spaces */
+        width: 100%;
+        padding: 10px 5px;
     }
-    
     .hamburger {
         display: block;
         cursor: pointer;
         z-index: 1000;
     }
     .description {
-        font-size: 2.5vw!important; /* Μικρότερο μέγεθος για πολύ μικρές οθόνες */
+        font-size: 2.5vw!important;
     }
     .description .note {
         font-size: 2.5vw!important;
