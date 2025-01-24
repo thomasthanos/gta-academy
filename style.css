@@ -254,12 +254,6 @@ color: #adadad;
 }
 
 @media (max-width: 1268px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 70px;
-        justify-items: center;
-    }
     .description {
         margin-left: 0.5em;
         margin-right: 0.5em;
@@ -347,12 +341,6 @@ color: #adadad;
 }
 
 @media (max-width: 480px) {
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 70px;
-        justify-items: center;
-    }
     .description {
         margin-left: 0.5em;
         margin-right: 0.5em;
@@ -386,3 +374,4 @@ color: #adadad;
         letter-spacing: 0.5px;
     }
 }
+

@@ -103,6 +103,11 @@ body.dark-mode .switch::before {
 }
 
 
+body .card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #121212;
+}
+
 body .description {
     color: #333;
     background-color: #ffffff;
@@ -323,21 +328,13 @@ body.light-mode .card img:hover {
 body.dark-mode .card img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425);
 }
-/* Default styles (Desktop) */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 εικόνες ανά σειρά */
-    gap: 20px;
-    padding: 20px;
-}
 
-.card {
+.dark-mode .card p {
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.dark-mode .card p {
+    margin-top: auto;
     padding: 20px 15px;
     border-radius: 15px;
     background-color: #071b3125;
@@ -409,16 +406,21 @@ body.dark-mode .menu a {
 body.dark-mode .menu a:hover {
     color: #006572;
 }
-/* Tablet styles (2 εικόνες ανά σειρά) */
-@media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 εικόνες ανά σειρά */
+
+
+
+/* Tablet styles (2 columns) */
+@media (max-width: 1368px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+        gap: 30px; /* Adjust gap for smaller screens */
     }
 }
 
-/* Mobile styles (1 εικόνα ανά σειρά) */
-@media (max-width: 480px) {
-    .card-container {
-        grid-template-columns: 1fr; /* 1 εικόνα ανά σειρά */
+/* Mobile styles (1 column) */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        gap: 20px; /* Further reduced gap for mobile */
     }
 }
