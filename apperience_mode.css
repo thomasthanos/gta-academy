@@ -46,6 +46,9 @@
     border-radius: 30px;
     box-shadow: none;
 }
+body.dark-mode h2 {
+    color: #4fbff1;
+}
 
 body .slider:before {
     position: absolute;
@@ -208,20 +211,12 @@ section {
 }
 
 h2 {
-    font-size: 2.5rem !important;
-    font-weight: bold;
-    color: #ff4500;
+    font-size: 2.5rem ;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 10px 0;
-    margin-top: -34px;
-    font-family: 'Arial', sans-serif;
-}
-
-h2 {
-    color: #002b53fb;
     border-bottom: 2px solid #000000;
+    color: #002b53fb;
+    font-family: 'squid', sans-serif;
 }
 
 body.dark-mode h2 {
@@ -246,9 +241,6 @@ body.dark-mode {
     color: #ffffff;
 }
 
-body.dark-mode h2 {
-    color: #4fbff1;
-}
 
 .gallery {
     display: grid;
