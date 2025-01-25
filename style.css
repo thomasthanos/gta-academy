@@ -166,7 +166,7 @@ color: #adadad;
 
 
 
-
+/* Main container for the image */
 .image-container {
     margin: 20px auto;
     max-width: 1300px;
@@ -179,16 +179,12 @@ color: #adadad;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease, box-shadow 1.5s ease;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     perspective: 1200px;
+    will-change: transform, box-shadow;
 }
 
-.image-container:hover {
-    transform: perspective(1200px) rotateX(8deg) rotateY(-8deg) scale(1.05);
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 1s ease, box-shadow 1.5s ease;
-}
-
+/* Image inside the container */
 .main-image {
     width: 100%;
     max-height: 100%;
@@ -196,6 +192,15 @@ color: #adadad;
     border: none;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1);
     transition: transform 1.5s ease, filter 1.5s ease;
+    object-fit: cover;
+}
+
+
+
+.image-container:hover {
+    transform: perspective(1200px) rotateX(8deg) rotateY(-8deg) scale(1.05);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 1s ease, box-shadow 1.5s ease;
 }
 
 .image-container:hover .main-image {
@@ -491,4 +496,158 @@ p { font-size: clamp(14px, 4vw, 18px); }
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+/* Desktop-specific adjustments (min-width: 1440px) */
+@media (min-width: 1440px) {
+    .image-container {
+        max-width: 1000px;
+        padding: 30px;
+        perspective: 1200px;
+    }
+}
+
+/* Desktop adjustments (1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .image-container {
+        max-width: 800px;
+        padding: 25px;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .image-container {
+        max-width: 80%;
+        padding: 15px;
+        perspective: 1000px;
+    }
+
+    .image-container:hover {
+        transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) scale(1.04);
+    }
+}
+
+/* Small tablets and large phones (480px - 768px) */
+@media (max-width: 768px) and (min-width: 480px) {
+    .image-container {
+        max-width: 85%;
+        padding: 10px;
+        perspective: 800px;
+    }
+
+    .image-container:hover {
+        transform: perspective(800px) rotateX(3deg) rotateY(-3deg) scale(1.03);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Small phones (320px - 480px) */
+@media (max-width: 480px) and (min-width: 320px) {
+    .image-container {
+        max-width: 83%;
+        padding: 8px;
+        border-radius: 25px;
+        perspective: 600px;
+    }
+
+    .image-container:hover {
+        transform: perspective(600px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Very small phones (240px - 320px) */
+@media (max-width: 320px) and (min-width: 240px) {
+    .image-container {
+        max-width: 85%;
+        padding: 5px;
+        border-radius: 6px;
+        perspective: 500px;
+    }
+
+    .image-container:hover {
+        transform: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Minimalist mode for extremely small screens (under 240px) */
+@media (max-width: 240px) {
+    .image-container {
+        max-width: 90%;
+        padding: 4px;
+        border-radius: 5px;
+    }
+
+    .image-container:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+    .image-container {
+        max-height: 60vh;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+    .image-container {
+        max-height: 80vh;
+        margin: 10px auto;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+/* Light Mode Shadows */
+body.light-mode .image-container {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .image-container:hover {
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Shadows */
+body.dark-mode .image-container {
+    box-shadow: 0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918),
+        inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39);
+}
+
+body.dark-mode .image-container:hover {
+    box-shadow: 0 35px 70px rgba(50, 60, 90, 0.6), 0 25px 25px rgba(60, 70, 100, 0.3);
+}
+
+/* Responsive Light Mode Shadows */
+@media (max-width: 768px) {
+    body.light-mode .image-container {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body.light-mode .image-container:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Responsive Dark Mode Shadows */
+@media (max-width: 768px) {
+    body.dark-mode .image-container {
+        box-shadow: 0 2px 4px rgba(50, 60, 90, 0.1), -5px 5px 8px rgba(60, 70, 100, 0.6),
+            inset 0 2px 4px rgba(50, 60, 90, 0.1), inset 5px -5px 5px rgba(60, 70, 100, 0.2);
+    }
+
+    body.dark-mode .image-container:hover {
+        box-shadow: 0 20px 40px rgba(50, 60, 90, 0.3), 0 15px 15px rgba(60, 70, 100, 0.2);
+    }
+}
+
+/* Fallback for minimal screens without hover effects */
+@media (hover: none) {
+    .image-container:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
