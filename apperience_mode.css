@@ -179,34 +179,6 @@ body.dark-mode .image-container:hover {
 section {
     padding: 20px;
 }
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    .switch {
-        top: 80px;
-        right: 20px;
-        transform: scale(0.80);
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .card {
-        margin: 0 auto;
-        max-width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
 
 h2 {
     font-size: 2.5rem ;
@@ -258,12 +230,7 @@ body.dark-mode {
 }
 
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 70px;
-    justify-items: center;
-}
+
 
 
 .card {
@@ -413,22 +380,4 @@ body.dark-mode .menu a {
 
 body.dark-mode .menu a:hover {
     color: #006572;
-}
-
-
-
-/* Tablet styles (2 columns) */
-@media (max-width: 1368px) {
-    .gallery {
-        grid-template-columns: repeat(1, 1fr); /* 2 columns for tablet */
-        gap: 30px; /* Adjust gap for smaller screens */
-    }
-}
-
-/* Mobile styles (1 column) */
-@media (max-width: 600px) {
-    .gallery {
-        grid-template-columns: 1fr; /* 1 column for mobile */
-        gap: 20px; /* Further reduced gap for mobile */
-    }
 }
