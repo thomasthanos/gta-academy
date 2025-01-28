@@ -457,12 +457,92 @@ body.dark-mode .menu a:hover {
                     0 15px 15px rgba(60, 70, 100, 0.2);
     }    
 }
-/* Default styles - PCs */
+/* Dark Mode Card h6 with New Effects */
 .card h6 {
-    margin: 8px 0;
-    font-size: clamp(14px, 2.5vw, 25px);
+    margin: 4px 0;
+    font-size: 25px; /* Default font size for PC */
     text-align: center;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--text-shadow);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) 
+            drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
+    transition: transform 0.3s ease, letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card h6:hover {
+    transform: translateY(-5px);
+    letter-spacing: 2px;
+    text-shadow: var(--hover-text-shadow);
+}
+
+/* Default Light Mode */
+body.light-mode {
+    --gradient-color: linear-gradient(90deg, #000000, #303030);
+    --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    --hover-text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode {
+    --gradient-color: rgb(0, 156, 177); /* Set the solid background color for dark mode */
+    --text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.466), /* Black shadow for dark mode */
+        -2px -2px 4px rgba(0, 0, 0, 0.342);
+    --hover-text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.062);
+    background: rgb(0, 156, 177); /* Solid background color */
+}
+
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .card h6 {
+        font-size: 28px; /* Larger font for large screens */
+    }
+}
+
+/* PC (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .card h6 {
+        font-size: 25px; /* Default font size for PC */
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card h6 {
+        font-size: 22px; /* Smaller font for tablets */
+    }
+}
+
+/* Mobile Landscape (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .card h6 {
+        font-size: 20px; /* Slightly larger font for mobile landscape */
+    }
+}
+
+/* Mobile (375px to 479px) */
+@media (min-width: 375px) and (max-width: 479px) {
+    .card h6 {
+        font-size: 18px; /* Even smaller font for phones */
+    }
+}
+
+/* Small Mobile (Side Phones) (320px to 374px) */
+@media (min-width: 320px) and (max-width: 374px) {
+    .card h6 {
+        font-size: 16px; /* Smallest font for very small screens */
+    }
+}
+
+/* Extra Small Mobile (Below 320px) */
+@media (max-width: 319px) {
+    .card h6 {
+        font-size: 14px; /* Adjust for ultra-small screens */
+    }
 }
