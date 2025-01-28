@@ -248,7 +248,7 @@ color: #adadad;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 12px;
-    margin: 28px 0;
+    margin: 0px 0 28px 0px; /* Ελαχιστοποίηση του κενού πάνω και κάτω */
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
