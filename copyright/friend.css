@@ -1,70 +1,166 @@
-/* CSS */
-.unique-work {
-    margin: 2rem auto;
-    max-width: 1200px;
-    border: 2px solid #00ff88;
-    border-radius: 15px;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.7);
+html {
+    overflow-y: scroll;
+}
+h5 {
+    font-size: 24px; /* Default μέγεθος για desktop */
+}
+.card, .description, h2, h3, h4, h5, h6 {
+    font-family: 'ComicSansLocal', cursive, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 130vh;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #4e6e7d #c9d6df;
+    padding-top: 45px;
 }
 
-.static-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+html::-webkit-scrollbar {
+    width: 10px;
+}
+p{
+    font-size: x-large;
+    text-transform: uppercase;
+}
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 20px;
+}
+html::-webkit-scrollbar-track {
+    background: #c9d6df;
+    border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #4e6e7d;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #3b545f;
+}
+
+/* Scrollbar για την περιγραφή */
+.cyber-description {
+    max-height: 200px; /* Ορίζουμε μέγιστο ύψος */
+    overflow-y: auto;  /* Ενεργοποιούμε το vertical scroll */
+    scrollbar-width: thin; /* Για Firefox */
+    scrollbar-color: #00ff88 rgba(0, 20, 30, 0.8); /* Για Firefox */
+}
+
+/* Για να κρατήσουμε το hover effect */
+.cyber-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+}
+
+/* Google Fonts - Προαιρετικό, αν χρησιμοποιείτε Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.cyber-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 3px solid #00d9ff;
+    border-radius: 15px;
+    background: rgba(0, 20, 30, 0.9);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.cyber-image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
     margin-bottom: 2rem;
 }
 
-.permanent-image {
+.cyber-image {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid #00ff88;
-    filter: grayscale(30%);
-    transition: transform 0.3s ease;
+    filter: hue-rotate(10deg) contrast(110%);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.permanent-image:hover {
-    transform: scale(1.05);
-    filter: grayscale(0%);
+.cyber-image:hover {
+    transform: scale(1.03);
+    filter: hue-rotate(-5deg) brightness(120%);
 }
 
-.description-btn {
-    background: linear-gradient(145deg, #00ff88, #2196f3);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    cursor: pointer;
+ 
+.cyber-button {
     position: relative;
-    overflow: hidden;
+    background: linear-gradient(145deg, #002429 30%, #002429 100%);
+    border: 2px solid #000000;
+    padding: 1.2rem 0rem;
+    border-radius: 8px;
+    cursor: pointer;
     margin: 0 auto;
     display: block;
+    transition: all 0.3s ease;
+    overflow: visible;
 }
 
-.btn-text {
+.cyber-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #000;
-    position: relative;
-    z-index: 2;
+    text-shadow: 0 0 8px rgb(0, 0, 0)
 }
 
-.hidden-description {
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 1rem;
-    border-radius: 10px;
-    width: 300px;
-    opacity: 0;
-    transition: all 0.4s ease;
-    border: 1px solid #00ff88;
-}
-
-.description-btn:hover .hidden-description {
+.cyber-description {
+    position: relative; /* Αλλαγή από absolute σε relative */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 0.7rem;
     opacity: 1;
-    top: 110%;
+    visibility: visible;
+    background: rgba(0, 10, 20, 0.95);
+    border-top: 2px solid #00bdd6;
+    border-bottom: 2px solid #00bdd6;
+    border-left: none;
+    border-right: none;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+/* Διέγραψε τον κανόνα .cyber-button:hover .cyber-description */
+.cyber-button:hover .cyber-description {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}
+
+.glow-text {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    display: block;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 10px #000000;
+}
+
+.cyber-description p {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Προαιρετικό: Animation για το border */
+@keyframes border-glow {
+    0% { box-shadow: 0 0 15px #00d9ff; }
+    50% { box-shadow: 0 0 30px #00d9ff; }
+    100% { box-shadow: 0 0 15px #00d9ff; }
+}
+
+.cyber-container {
+    animation: border-glow 3s infinite;
 }
