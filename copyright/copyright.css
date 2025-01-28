@@ -330,7 +330,7 @@ body {
     }
 }
 
-/* Tablet Portrait */
+/* Updated Tablet Portrait Media Query */
 @media (max-width: 768px) {
     body {
         padding: 20px 0;
@@ -345,8 +345,8 @@ body {
         font-size: 2rem;
     }
     
+    /* Removed grid-template-columns change */
     .postcard-images {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
@@ -360,41 +360,19 @@ body {
     }
 }
 
-/* Mobile Devices */
+/* Mobile Devices - Keep side-by-side */
 @media (max-width: 480px) {
-    .copyright-container {
-        padding: 1rem;
-        border-radius: 16px;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-    }
-    
-    .content {
-        padding: 1rem;
-        margin: 1rem 0;
-    }
-    
-    .text {
-        font-size: 1rem;
-        line-height: 1.5;
+    .postcard-images {
+        grid-template-columns: repeat(2, 1fr); /* Explicitly keep 2 columns */
+        gap: 1rem; /* Reduce gap for small screens */
     }
     
     .postcard {
-        height: 220px;
-        border-radius: 10px;
-    }
-    
-    .image-caption {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-    }
-    
-    .back-link {
-        font-size: 0.9rem;
+        height: 180px; /* More compact height */
     }
 }
+
+
 
 /* Small Mobile Devices - Enhanced Text Readability */
 @media (max-width: 360px) {
@@ -429,7 +407,9 @@ body {
     .postcard {
         height: 180px;
     }
-    
+    .postcard-images {
+        grid-template-columns: 1fr; /* Stack below 360px */
+    }
     .image-caption {
         font-size: 0.75rem;
         padding: 0.4rem;
