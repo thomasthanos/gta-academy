@@ -40,8 +40,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto; /* Προσθήκη scroll αν χρειαστεί */
+    flex-direction: column; /* Βεβαιώνεται ότι όλα τα στοιχεία στοιχίζονται κάθετα */
+    overflow-x: hidden; /* Απόφυγε οριζόντια κύλιση */
+    padding: 0 20px; /* Προσθήκη padding για μικρότερες οθόνες */
 }
+
 
 .cyber-world {
     perspective: 1000px;
@@ -184,4 +187,78 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     text-shadow: 0 0 10px #00d9ff;
+}
+/* Existing styles remain the same until the media queries section */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 20px; /* Add padding to prevent content from touching edges */
+        overflow-y: auto; /* Ensure scrolling works */
+    }
+
+    .cyber-world {
+        padding: 10px; /* Reduce padding for smaller screens */
+        width: 100%; /* Full width on mobile */
+        max-width: 100%; /* Allow it to take full width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cyber-card {
+        width: 100%; /* Full width on mobile */
+        max-width: 400px; /* Limit maximum width for better readability */
+        margin: 0 auto; /* Center the card */
+        animation: float-mobile 8s infinite ease-in-out; /* Adjusted animation for mobile */
+    }
+
+    @keyframes float-mobile {
+        0%, 100% {
+            transform: translateY(0) rotateX(0) rotateY(0);
+        }
+        50% {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg); /* Smaller animation for mobile */
+        }
+    }
+
+    .cyber-image-wrapper {
+        height: 50%; /* Adjust height for mobile */
+    }
+
+    .cyber-button {
+        padding: 12px 24px; /* Slightly smaller button for mobile */
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .cyber-description {
+        margin-top: 15px; /* Reduce margin for mobile */
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .glow-text {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Small Mobile Devices (e.g., iPhone SE) */
+@media (max-width: 480px) {
+    .cyber-card {
+        max-width: 90%; /* Allow more width usage on very small screens */
+    }
+
+    .cyber-button {
+        padding: 10px 20px; /* Even smaller button */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .glow-text {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+}
+.cyber-world, .copyright-container {
+    margin: 0 auto; /* Κεντράρισμα */
+    width: 100%;
+    max-width: 800px; /* Εύλογη τιμή για να περιοριστεί το μέγεθος */
+    text-align: center; /* Ευθυγράμμιση κειμένου */
 }
