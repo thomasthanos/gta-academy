@@ -88,6 +88,7 @@ body {
     color: #ff4081;
     font-weight: 600;
 }
+
 /* Postcard Images Section */
 .postcard-images {
     display: grid; /* Χρησιμοποιούμε Grid για να διαχωρίσουμε τις εικόνες σε στήλες */
