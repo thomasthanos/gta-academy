@@ -173,69 +173,25 @@ body {
     0% { background-position: 0 0; }
     100% { background-position: 100% 100%; }
 }
+/* ... (όλος ο προηγούμενος κώδικας μέχρι τα animations παραμένει ίδιος) ... */
 
-/* Mobile Devices (max-width: 480px) ΠΡΩΤΑ τα μεγαλύτερα breakpoints */
-@media (max-width: 480px) {
-    .title {
-        font-size: 24px;
-    }
-    .text {
-        font-size: 14px;
-    }
-    .contributors {
-        font-size: 12px;
-    }
-    .postcard {
-        height: 250px;
-    }
+/* Μεγάλες Οθόνες (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .title { font-size: 50px; }
+    .text { font-size: 22px; }
+    .contributors { font-size: 18px; }
     .image-caption {
-        font-size: 12px;
-        height: 28px;
-        line-height: 28px;
-    }
-    .back-link {
-        font-size: 14px;
+        font-size: 18px;
+        height: 45px;
+        line-height: 45px;
     }
 }
 
-/* Mobile Devices (max-width: 360px) ΜΕΤΑ τα μικρότερα */
-@media (max-width: 360px) {
-    .title {
-        font-size: 22px; /* Θα αλλάξει ΜΟΝΟ όταν η οθόνη είναι <360px */
-    }
-    .text {
-        font-size: 12px;
-    }
-    .contributors {
-        font-size: 10px;
-    }
-    .postcard {
-        height: 200px;
-    }
-    .image-caption {
-        font-size: 10px; /* Πιο μικρό γράμμα για πολύ μικρές οθόνες */
-        height: 25px;
-        line-height: 25px;
-    }
-    .back-link {
-        font-size: 12px;
-    }
-}
-
-/* Medium Screens (max-width: 768px) */
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    .title {
-        font-size: 32px;
-    }
-
-    .text {
-        font-size: 16px;
-    }
-
-    .contributors {
-        font-size: 14px;
-    }
-
+    .title { font-size: 32px; }
+    .text { font-size: 16px; }
+    .contributors { font-size: 14px; }
     .image-caption {
         font-size: 14px;
         height: 32px;
@@ -243,23 +199,43 @@ body {
     }
 }
 
-/* Large Screens (min-width: 1200px) */
-@media (min-width: 1200px) {
-    .title {
-        font-size: 50px;
-    }
-
-    .text {
-        font-size: 22px;
-    }
-
-    .contributors {
-        font-size: 18px;
-    }
-
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .title { font-size: 24px; }
+    .text { font-size: 14px; }
+    .contributors { font-size: 12px; }
+    .postcard { height: 250px; }
     .image-caption {
-        font-size: 18px;
-        height: 45px;
-        line-height: 45px;
+        font-size: 12px;
+        height: 28px;
+        line-height: 28px;
     }
+    .back-link { font-size: 14px; }
+}
+
+/* Πολύ Μικρά Κινητά (max-width: 360px) */
+@media (max-width: 360px) {
+    .title { font-size: 22px; }
+    .text { font-size: 12px; }
+    .contributors { font-size: 10px; }
+    .postcard { height: 200px; }
+    .image-caption {
+        font-size: 10px;
+        height: 25px;
+        line-height: 25px;
+    }
+    .back-link { font-size: 12px; }
+}
+/* Πολύ Μικρά Κινητά (max-width: 360px) */
+@media (max-width: 340px) {
+    .title { font-size: 20px; }
+    .text { font-size: 10px; }
+    .contributors { font-size: 8px; }
+    .postcard { height: 180px; }
+    .image-caption {
+        font-size: 7px;
+        height: 22px;
+        line-height: 22px;
+    }
+    .back-link { font-size: 10px; }
 }
