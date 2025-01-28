@@ -307,17 +307,14 @@ body.dark-mode .image-container:hover {
     color: #fff; /* White text */
     text-align: center;
     background-color: rgba(0, 156, 177, 0.9); /* Semi-transparent background */
-    padding: 12px 20px; /* Added horizontal padding */
-    border-radius: 8px; /* Rounded corners */
+    padding: 12px 0; /* Padding για πάνω/κάτω */
+    border-radius: 0; /* Χωρίς rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer, larger shadow */
     letter-spacing: 1px; /* Slight letter spacing */
     font-family: 'Poppins', Arial, sans-serif; /* Modern font */
     text-transform: uppercase; /* Uppercase text */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    display: inline-block; /* Box only around the text */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centers the element horizontally */
+    width: 100%; /* Καλύπτει όλο το πλάτος */
+    position: relative; /* Στατικό footer */
 }
 
 .copyright a {

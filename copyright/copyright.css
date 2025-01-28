@@ -396,30 +396,82 @@ body {
     }
 }
 
-/* Small Mobile Devices */
+/* Small Mobile Devices - Enhanced Text Readability */
 @media (max-width: 360px) {
+    .copyright-container {
+        padding: 0.8rem;
+        border-radius: 12px;
+    }
+    
     .title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .title::after {
+        bottom: -6px;
+        height: 1px;
+    }
+    
+    .content {
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+    
+    .text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: left; /* Better for narrow screens */
+        hyphens: auto; /* Enable hyphenation */
+        margin-bottom: 0.8rem;
     }
     
     .postcard {
-        height: 200px;
+        height: 180px;
     }
     
     .image-caption {
+        font-size: 0.75rem;
+        padding: 0.4rem;
+    }
+    
+    .back-link {
         font-size: 0.8rem;
+        padding: 0.6rem 1.2rem;
     }
 }
 
-/* Height Adjustments for Portrait Orientation */
-@media (max-height: 600px) and (orientation: portrait) {
-    body {
-        align-items: flex-start;
-        padding-top: 2rem;
+/* Extra Small Screens (e.g. Galaxy Fold) */
+@media (max-width: 280px) {
+    .title {
+        font-size: 1.2rem;
     }
     
+    .text {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .postcard {
+        height: 150px;
+    }
+    
+    .back-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Height Optimization for Very Short Screens */
+@media (max-height: 600px) {
     .copyright-container {
-        margin-top: 2rem;
+        margin: 1rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .postcard-images {
+        grid-template-columns: 1fr;
     }
 }
 
