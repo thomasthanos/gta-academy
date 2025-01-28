@@ -318,14 +318,15 @@ body.dark-mode .image-container:hover {
 }
 
 .copyright a {
-    color: #fff; /* White color for the link */
+    color: rgb(0, 0, 0); /* White color for the link */
     text-decoration: none; /* Removes underline */
     font-weight: normal; /* Keeps the link text normal weight */
     transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 .copyright a:hover {
-    color: #000000; /* Highlight color when hovering over the link */
+    color: #b10000; /* Highlight color when hovering over the link */
+    transition: 150ms;
 }
 
 
@@ -681,5 +682,67 @@ p { font-size: clamp(14px, 4vw, 18px); }
     .image-container:hover {
         transform: none;
         box-shadow: none;
+    }
+}
+/* Νέα Media Queries για επιπλέον resolutions */
+@media (max-width: 1200px) {
+    .copyright {
+        font-size: 15px;
+        background-color: rgba(0, 156, 177, 0.88);
+        padding: 11px 0;
+    }
+}
+
+@media (max-width: 1050px) {
+    .copyright {
+        font-size: 14px;
+        background-color: rgba(0, 156, 177, 0.85);
+        padding: 10px 0;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 900px) {
+    .copyright {
+        font-size: 13px;
+        background-color: rgba(0, 156, 177, 0.82);
+        padding: 9px 0;
+        letter-spacing: 0.6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .copyright {
+        font-size: 12px;
+        background-color: rgba(0, 156, 177, 0.8);
+        padding: 8px 0;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .copyright {
+        font-size: 11px;
+        background-color: rgba(0, 156, 177, 0.77);
+        padding: 7px 0;
+        letter-spacing: 0.4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .copyright {
+        font-size: 8px;
+        background-color: rgba(0, 156, 177, 0.75);
+        padding: 4px 0px;
+        letter-spacing: 0.3px;
+    }
+}
+
+@media (max-width: 360px) {
+    .copyright {
+        font-size: 9px;
+        background-color: rgba(0, 156, 177, 0.7);
+        padding: 5px 0;
+        letter-spacing: 0.2px;
     }
 }
