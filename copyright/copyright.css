@@ -67,6 +67,7 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif; /* Εξασφαλίζουμε οτι το font εφαρμόζεται */
 }
 
 /* Text Styling */
@@ -75,6 +76,7 @@ body {
     color: #f1f1f1;
     margin-bottom: 10px;
     font-weight: 400;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .contributors {
@@ -82,6 +84,7 @@ body {
     color: #f1f1f1;
     margin-bottom: 30px;
     font-weight: 300;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .highlight {
@@ -91,10 +94,10 @@ body {
 
 /* Postcard Images Section */
 .postcard-images {
-    display: grid; /* Χρησιμοποιούμε Grid για να διαχωρίσουμε τις εικόνες σε στήλες */
-    grid-template-columns: repeat(2, 1fr); /* 2 εικόνες ανά σειρά */
-    gap: 20px; /* Απόσταση μεταξύ των εικόνων */
-    margin: 20px 0; /* Κενό πάνω και κάτω από το section */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
     width: 100%;
 }
 
@@ -104,26 +107,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Το κείμενο παραμένει στο κάτω μέρος */
+    justify-content: flex-end;
     width: 100%;
-    height: 350px; /* Ύψος του κουτιού παραμένει σταθερό */
+    height: 350px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     background-color: #121212;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Postcard Image */
 .postcard-image {
     width: 100%;
-    height: 100%; /* Η εικόνα γεμίζει το κουτί */
-    object-fit: contain; /* Η εικόνα παραμένει πλήρης και με τη σωστή αναλογία */
+    height: 100%;
+    object-fit: contain;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
 .postcard-image:hover {
-    transform: scale(1.05); /* Αυξάνει ελαφρώς την εικόνα κατά το hover */
+    transform: scale(1.05);
 }
 
 /* Caption */
@@ -137,10 +141,11 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     position: absolute;
-    bottom: 0; /* Το κείμενο παραμένει πάντα στο κάτω μέρος */
+    bottom: 0;
     left: 0;
     box-sizing: border-box;
     border-radius: 0 0 10px 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* Back Link Styling */
@@ -155,6 +160,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .back-link:hover {
@@ -168,12 +174,58 @@ body {
     100% { background-position: 100% 100%; }
 }
 
-/* Responsive Design */
-
-/* Mobile Devices (max-width: 480px) */
+/* Mobile Devices (max-width: 480px) ΠΡΩΤΑ τα μεγαλύτερα breakpoints */
 @media (max-width: 480px) {
     .title {
-        font-size: 30px;
+        font-size: 24px;
+    }
+    .text {
+        font-size: 14px;
+    }
+    .contributors {
+        font-size: 12px;
+    }
+    .postcard {
+        height: 250px;
+    }
+    .image-caption {
+        font-size: 12px;
+        height: 28px;
+        line-height: 28px;
+    }
+    .back-link {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Devices (max-width: 360px) ΜΕΤΑ τα μικρότερα */
+@media (max-width: 360px) {
+    .title {
+        font-size: 22px; /* Θα αλλάξει ΜΟΝΟ όταν η οθόνη είναι <360px */
+    }
+    .text {
+        font-size: 12px;
+    }
+    .contributors {
+        font-size: 10px;
+    }
+    .postcard {
+        height: 200px;
+    }
+    .image-caption {
+        font-size: 10px; /* Πιο μικρό γράμμα για πολύ μικρές οθόνες */
+        height: 25px;
+        line-height: 25px;
+    }
+    .back-link {
+        font-size: 12px;
+    }
+}
+
+/* Medium Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
     }
 
     .text {
@@ -184,32 +236,10 @@ body {
         font-size: 14px;
     }
 
-    .postcard {
-        height: 280px;
-    }
-
-    .back-link {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
-
-/* Tablets (max-width: 768px) */
-@media (max-width: 768px) {
-    .title {
-        font-size: 35px;
-    }
-
-    .text {
-        font-size: 18px;
-    }
-
-    .postcard {
-        height: 300px;
-    }
-
-    .back-link {
-        font-size: 18px;
+    .image-caption {
+        font-size: 14px;
+        height: 32px;
+        line-height: 32px;
     }
 }
 
@@ -224,15 +254,12 @@ body {
     }
 
     .contributors {
-        font-size: 20px;
+        font-size: 18px;
     }
 
-    .postcard {
-        height: 400px;
-    }
-
-    .back-link {
-        font-size: 22px;
-        padding: 16px 32px;
+    .image-caption {
+        font-size: 18px;
+        height: 45px;
+        line-height: 45px;
     }
 }
