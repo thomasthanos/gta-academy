@@ -464,4 +464,5 @@ body.dark-mode .menu a:hover {
     text-align: center;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
 }
