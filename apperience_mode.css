@@ -466,7 +466,7 @@ body.dark-mode .menu a:hover {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    background: white;
+    background: rgb(0, 0, 0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: var(--text-shadow);
@@ -474,7 +474,22 @@ body.dark-mode .menu a:hover {
             drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
     transition: transform 0.3s ease, letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
-
+.dark-mode .card h6{
+    margin: 4px 0;
+    font-size: 25px; /* Default font size for PC */
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgb(206, 206, 206);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--text-shadow);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) 
+            drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
+    transition: transform 0.3s ease, letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
 .card h6:hover {
     transform: translateY(-5px);
     letter-spacing: 2px;
