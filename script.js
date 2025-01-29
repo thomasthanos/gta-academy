@@ -189,17 +189,11 @@ document.addEventListener('contextmenu', function(e) {
 
 
 function search_vehicles() {
-    let input = document.getElementById('searchbar').value.toLowerCase();
-    let cards = document.getElementsByClassName('card');
-
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].getElementsByTagName('h6')[0].textContent.toLowerCase();
-        
-        // Ελέγχει αν ο τίτλος ξεκινά με το γράμμα που πληκτρολογήθηκε
-        if (title.startsWith(input)) {
-            cards[i].style.display = ""; // Εμφάνισε την κάρτα
-        } else {
-            cards[i].style.display = "none"; // Απόκρυψη της κάρτας
-        }
-    }
+    const input = document.getElementById('searchbar').value.toLowerCase();
+    const cards = document.getElementsByClassName('card');
+    
+    Array.from(cards).forEach(card => {
+        const title = card.querySelector('h6').textContent.toLowerCase();
+        card.style.display = title.startsWith(input) ? 'block' : 'none';
+    });
 }

@@ -1,0 +1,178 @@
+/* Existing styles */
+.container-input {
+    position: relative;
+    margin: 40px auto 0;
+    width: fit-content;
+}
+
+.input {
+    width: 50px;
+    padding: 8px 24px 8px 52px;
+    border-radius: 9999px;
+    border: 1px solid rgba(17, 89, 179, 0.3);
+    background: rgba(249, 250, 251, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(37, 99, 235, 0.1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    outline: none;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    color: #1e3a8a;
+    transform-origin: right center;
+}
+
+.container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    fill: #000000;
+    z-index: 2;
+}
+
+.input:focus {
+    width: 300px;
+    border-color: transparent;
+    box-shadow: 
+        0 8px 32px rgba(37, 99, 235, 0.2),
+        inset 0 0 0 2px #3b82f6,
+        0 0 0 4px rgba(59, 130, 246, 0.15);
+    background: rgba(255, 255, 255, 1);
+    padding-right: 48px;
+}
+
+.input:focus + svg {
+    fill: #000000;
+    transform: translateY(-50%) scale(1.15);
+    filter: drop-shadow(0 2px 4px rgba(37, 189, 235, 0.473));
+}
+
+@keyframes floatPulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+.container-input:hover svg {
+    animation: floatPulse 1.5s ease-in-out infinite;
+}
+
+.input::placeholder {
+    color: #007bb4;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.input:focus::placeholder {
+    color: #000000;
+    opacity: 0.8;
+}
+
+/* Gradient border animation on focus */
+.input:focus {
+    position: relative;
+}
+
+.input:focus::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #ffffff, #ffffff, #ffffff);
+    border-radius: 9999px;
+    z-index: -1;
+    animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container-input {
+        margin: 30px auto 0;
+    }
+    
+    .input {
+        width: 45px;
+        padding: 6px 20px 6px 44px;
+        font-size: 14px;
+    }
+    
+    .container-input svg {
+        left: 20px;
+        width: 18px;
+        height: 18px;
+    }
+    
+    .input:focus {
+        width: 240px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .input {
+        width: 40px;
+        padding-left: 40px;
+        font-size: 13px;
+    }
+    
+    .container-input svg {
+        left: 16px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .input:focus {
+        width: 200px;
+        padding-right: 36px;
+    }
+}
+
+@media (max-width: 360px) {
+    .input:focus {
+        width: 180px;
+    }
+}
+
+/* Fold mobile specific */
+@media (max-width: 280px) {
+    .container-input {
+        margin: 20px auto 0;
+    }
+    
+    .input {
+        width: 36px;
+        padding: 5px 16px 5px 36px;
+        font-size: 12px;
+    }
+    
+    .container-input svg {
+        left: 12px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .input:focus {
+        width: 160px;
+        padding-right: 32px;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .input:focus {
+        width: 280px;
+    }
+}
+
+/* Optional: Disable hover animation on touch devices */
+@media (hover: none) {
+    .container-input:hover svg {
+        animation: none;
+    }
+}
