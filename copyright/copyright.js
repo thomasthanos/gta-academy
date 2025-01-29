@@ -1,39 +1,56 @@
-// JavaScript - Προαιρετικό για additional interactions
-document.querySelector('.description-btn').addEventListener('click', function() {
-    this.classList.toggle('active-description');
+// Smooth scroll handler
+let lastScroll = 0;
+let ticking = false;
+const switchButton = document.querySelector('.switch-button');
+
+function updateSwitchButton(scrollPos) {
+    if (scrollPos > 80) {
+        switchButton.classList.add('hidden');
+    } else {
+        switchButton.classList.remove('hidden');
+    }
+}
+
+window.addEventListener('scroll', () => {
+    lastScroll = window.scrollY;
+    
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            updateSwitchButton(lastScroll);
+            ticking = false;
+        });
+        ticking = true;
+    }
 });
 
-// Προσθήκη hover effect με JS αν χρειάζεται
+// Optimized hover effects with requestAnimationFrame
 document.querySelectorAll('.permanent-image').forEach(img => {
+    let hovering = false;
+    
+    const updateTransform = () => {
+        if (hovering) {
+            img.style.transform = 'scale(1.05)';
+        } else {
+            img.style.transform = 'scale(1)';
+        }
+        requestAnimationFrame(updateTransform);
+    };
+
     img.addEventListener('mouseenter', () => {
-        img.style.transform = 'scale(1.05)';
+        hovering = true;
+        requestAnimationFrame(updateTransform);
     });
     
     img.addEventListener('mouseleave', () => {
-        img.style.transform = 'scale(1)';
+        hovering = false;
+        requestAnimationFrame(updateTransform);
     });
 });
-//
-//
-//
-// Όταν η σελίδα κάνει scroll
-window.addEventListener('scroll', () => {
-    // Παίρνουμε την τρέχουσα θέση κύλισης
-    const scrollPosition = window.scrollY;
 
-    // Ελέγχουμε αν η θέση κύλισης είναι μεγαλύτερη από 80px
-    if (scrollPosition > 80) {
-        // Μετακινείται και αποκτά δυναμικό effect (με εφέ αναλαμπής και μεγέθυνσης)
-        switchButton.style.transform = 'translateX(100px) scale(0.6) rotate(15deg)';
-        switchButton.style.opacity = '0'; // Κρύβουμε το κουμπί
-        switchButton.style.visibility = 'hidden'; // Το κάνει εντελώς αόρατο
-        switchButton.style.pointerEvents = 'none'; // Απενεργοποιούμε το click
-        
-    } else {
-        // Επιστρέφει στην αρχική του θέση με πιο μοντέρνα κίνηση
-        switchButton.style.transform = 'translateX(0) scale(1) rotate(0deg)';
-        switchButton.style.opacity = '1'; // Επαναφορά πλήρους διαφάνειας
-        switchButton.style.visibility = 'visible'; // Το κάνει ξανά ορατό
-        switchButton.style.pointerEvents = 'auto'; // Ενεργοποιούμε το click ξανά
-    }
+// Smooth description toggle
+document.querySelector('.description-btn').addEventListener('click', function() {
+    this.classList.toggle('active-description');
+    const description = document.querySelector('.cyber-description');
+    description.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    description.style.maxHeight = description.style.maxHeight ? null : `${description.scrollHeight}px`;
 });

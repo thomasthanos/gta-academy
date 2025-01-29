@@ -1,5 +1,5 @@
 html {
-    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 
@@ -63,6 +63,8 @@ body {
     box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
     transform-style: preserve-3d;
     animation: float 8s infinite ease-in-out;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 @keyframes float {
@@ -85,8 +87,11 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(50%) contrast(120%);
-    transition: transform 0.5s, filter 0.5s;
+    filter: grayscale(10%) contrast(110%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+    backface-visibility: hidden;
+    padding: 20px 20px 5px 20px;
+    border-radius: 40px;
 }
 
 .cyber-image:hover {
@@ -126,7 +131,7 @@ body {
     color: #000;
     text-transform: uppercase;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cyber-button-text {
@@ -189,46 +194,55 @@ body {
     line-height: 1.5;
     text-shadow: 0 0 10px #00d9ff;
 }
+
+
+
+
 #ourjob-header {
     --main-color: #00b7ff;
     --neon-glow: 0 0 15px var(--main-color);
-    --font-stack: 'Inter', 'Poppins', sans-serif; /* Σύγχρονες γραμματοσειρές */
-    
+    --font-stack: 'Inter', 'Poppins', sans-serif;
+
     font-family: var(--font-stack);
-    font-size: clamp(1.5rem, 3vw, 2.2rem); /* Responsive μέγεθος */
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: var(--main-color);
     text-transform: uppercase;
-    letter-spacing: 0.1em; /* Πιο επαγγελματικό κενό */
+    letter-spacing: 0.1em;
     margin-bottom: 1rem;
     position: relative;
     
-    /* Gradient Underline */
+    /* Διόρθωση: Αφαίρεση του overflow: hidden */
     &::after {
         content: '';
         position: absolute;
-        bottom: -5px;
+        bottom: -3px; /* Προσαρμογή θέσης */
         left: 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, var(--main-color), transparent);
-        transition: transform 0.3s ease;
+        background: linear-gradient(
+            90deg,
+            var(--main-color), /* Αλλαγή: Από transparent σε main-color */
+            rgba(0, 183, 255, 0.5), /* Προσθήκη ημιδιαφανούς */
+            var(--main-color)
+        );
+        animation: line-flow 6s infinite;
+        transform: scaleX(0.8); /* Αρχική κατάσταση */
+        opacity: 0.8; /* Προσθήκη opacity */
     }
 
-    /* Neon Hover Effect */
-    &:hover {
-        text-shadow: var(--neon-glow);
-        &::after {
-            transform: scaleX(1.2);
-        }
-    }
 
-    /* Animation για φορτώνει */
-    animation: text-flicker 3s infinite alternate;
 }
 
-@keyframes text-flicker {
-    0% { opacity: 0.95; }
-    100% { opacity: 1; }
+@keyframes line-flow {
+    0% {
+        transform: scaleX(0.8) translateX(-20%);
+    }
+    50% {
+        transform: scaleX(1) translateX(10%);
+    }
+    100% {
+        transform: scaleX(0.8) translateX(-20%);
+    }
 }
 
 
