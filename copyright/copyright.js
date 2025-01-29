@@ -54,3 +54,6 @@ document.querySelector('.description-btn').addEventListener('click', function() 
     description.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
     description.style.maxHeight = description.style.maxHeight ? null : `${description.scrollHeight}px`;
 });
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});

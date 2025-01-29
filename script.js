@@ -187,3 +187,6 @@ title.addEventListener('mouseleave', () => {
     title.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.2)"; // Επαναφορά της σκιάς
     title.style.transform = "scale(1)"; // Επαναφορά στο αρχικό μέγεθος
 });
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
