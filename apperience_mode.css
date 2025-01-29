@@ -382,80 +382,6 @@ body.dark-mode .menu a:hover {
     color: #006572;
 }
 
-@media (max-width: 1380px) and (min-width: 521px) {
-    .dark-mode .switch::before {
-        box-shadow: 0 0 10px 3px rgba(189, 195, 199, 0.4), 
-                    0 0 6px 3px rgba(52, 152, 219, 0.3), 
-                    0 0 15px 0px rgba(189, 195, 199, 0.5) !important;
-    }
-    body.light-mode .image-container {
-        background: linear-gradient(145deg, #ffffff, #f3f3f3);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 
-                    0 10px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.dark-mode .image-container {
-        background: linear-gradient(145deg, #1f1f1f, #292929);
-        box-shadow: 0 3px 7px rgba(50, 60, 90, 0.15), 
-                    -5px 5px 10px rgba(60, 70, 100, 0.5), 
-                    inset 0 3px 7px rgba(50, 60, 90, 0.15), 
-                    inset 5px -5px 7px rgba(60, 70, 100, 0.3);
-    }
-    
-    body.light-mode .image-container:hover {
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
-                    0 12px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.dark-mode .image-container:hover {
-        box-shadow: 0 20px 40px rgba(50, 60, 90, 0.4), 
-                    0 15px 15px rgba(60, 70, 100, 0.2);
-    }    
-}
-
-@media (max-width: 520px) and (min-width: 240px) {
-
-    .switch {
-        position: fixed;
-        top: 83px;
-        right: 10px;
-        transform: scale(0.7) !important;
-        transition: transform 0.4s ease-in-out, opacity 0.3s ease, visibility 0.3s ease;
-    }
-    .switch::before {
-        box-shadow: 0 0 5px 2px rgba(255, 193, 7, 0.3), 
-                    0 0 8px 2px rgba(255, 87, 34, 0.3), 
-                    0 0 10px 2px rgba(255, 152, 0, 0.4) !important;
-    }
-    
-    .dark-mode .switch::before {
-        box-shadow: 0 0 10px 3px rgba(189, 195, 199, 0.4), 
-                    0 0 6px 3px rgba(52, 152, 219, 0.3), 
-                    0 0 15px 0px rgba(189, 195, 199, 0.5) !important;
-    }
-    body.light-mode .image-container {
-        background: linear-gradient(145deg, #ffffff, #f3f3f3);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 
-                    0 10px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.dark-mode .image-container {
-        background: linear-gradient(145deg, #1f1f1f, #292929);
-        box-shadow: 0 3px 7px rgba(50, 60, 90, 0.15), 
-                    -5px 5px 10px rgba(60, 70, 100, 0.5), 
-                    inset 0 3px 7px rgba(50, 60, 90, 0.15), 
-                    inset 5px -5px 7px rgba(60, 70, 100, 0.3);
-    }
-    
-    body.light-mode .image-container:hover {
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
-                    0 12px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.dark-mode .image-container:hover {
-        box-shadow: 0 20px 40px rgba(50, 60, 90, 0.4), 
-                    0 15px 15px rgba(60, 70, 100, 0.2);
-    }    
 }
 /* Dark Mode Card h6 with New Effects */
 .card h6 {
@@ -512,52 +438,114 @@ body.light-mode {
     background: rgb(0, 156, 177); /* Solid background color */
 }
 
-
-/* Large Desktop (1440px and above) */
+/* Optimized Media Queries */
 @media (min-width: 1440px) {
-    .card h6 {
-        font-size: 28px; /* Larger font for large screens */
-    }
+    .card h6 { font-size: 28px; }
 }
 
-/* PC (1024px to 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .card h6 {
-        font-size: 25px; /* Default font size for PC */
-    }
+    .card h6 { font-size: 25px; }
 }
 
-/* Tablet (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .card h6 {
-        font-size: 22px; /* Smaller font for tablets */
-    }
+    .card h6 { font-size: 22px; }
 }
 
-/* Mobile Landscape (480px to 767px) */
 @media (min-width: 480px) and (max-width: 767px) {
-    .card h6 {
-        font-size: 20px; /* Slightly larger font for mobile landscape */
-    }
+    .card h6 { font-size: 20px; }
 }
 
-/* Mobile (375px to 479px) */
 @media (min-width: 375px) and (max-width: 479px) {
-    .card h6 {
-        font-size: 18px; /* Even smaller font for phones */
-    }
+    .card h6 { font-size: 18px; }
 }
 
-/* Small Mobile (Side Phones) (320px to 374px) */
 @media (min-width: 320px) and (max-width: 374px) {
-    .card h6 {
-        font-size: 16px; /* Smallest font for very small screens */
+    .card h6 { font-size: 16px; }
+}
+
+@media (max-width: 319px) {
+    .card h6 { font-size: 14px; }
+}
+
+/* Combined Device Queries */
+@media (max-width: 1380px) {
+    /* Shared styles for medium screens */
+    body.light-mode .image-container {
+        background: linear-gradient(145deg, #ffffff, #f3f3f3);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    body.dark-mode .image-container {
+        background: linear-gradient(145deg, #1f1f1f, #292929);
+        box-shadow: 0 3px 7px rgba(50, 60, 90, 0.15), 
+                   -5px 5px 10px rgba(60, 70, 100, 0.5), 
+                   inset 0 3px 7px rgba(50, 60, 90, 0.15), 
+                   inset 5px -5px 7px rgba(60, 70, 100, 0.3);
+    }
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .switch {
+        position: fixed;
+        top: 15px;
+        right: 60px;
+        transform: scale(0.8) !important;
     }
 }
 
-/* Extra Small Mobile (Below 320px) */
-@media (max-width: 319px) {
-    .card h6 {
-        font-size: 14px; /* Adjust for ultra-small screens */
+@media (max-width: 640px) {
+    .switch {
+        top: 14px;
+        right: 55px;
+        transform: scale(0.75) !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .switch {
+        top: 17px;
+        right: 50px;
+        transform: scale(0.7) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .switch {
+        top: 12px;
+        right: 45px;
+        transform: scale(0.65) !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .switch {
+        top: 10px;
+        right: 40px;
+        transform: scale(0.6) !important;
+    }
+}
+
+/* Light mode shadow effect */
+.switch::before {
+    box-shadow: 0 0 5px 2px rgba(255, 193, 7, 0.3), 
+               0 0 8px 2px rgba(255, 87, 34, 0.3), 
+               0 0 10px 2px rgba(255, 152, 0, 0.4) !important;
+}
+
+/* Dark mode shadow effect */
+.dark-mode .switch::before {
+    box-shadow: 0 0 10px 3px rgba(189, 195, 199, 0.4), 
+               0 0 6px 3px rgba(52, 152, 219, 0.3), 
+               0 0 15px 0px rgba(189, 195, 199, 0.5) !important;
+}
+
+
+    /* Hover states for all devices */
+    body.light-mode .image-container:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    body.dark-mode .image-container:hover {
+        box-shadow: 0 20px 40px rgba(50, 60, 90, 0.4), 0 15px 15px rgba(60, 70, 100, 0.2);
     }
 }
