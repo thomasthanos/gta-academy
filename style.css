@@ -140,7 +140,7 @@ color: #adadad;
 
 
 #home {
-    padding: 80px 20px 40px;
+    padding: 20px 20px 40px;
     text-align: center;
 }
 
@@ -269,12 +269,7 @@ color: #adadad;
     text-align: justify;
     font-family: 'Arial', sans-serif;
 }
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 70px;
-    justify-items: center;
-}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -329,7 +324,43 @@ body.dark-mode .image-container:hover {
     color: #b10000; /* Highlight color when hovering over the link */
     transition: 150ms;
 }
-
+/* From Uiverse.io by garerim */ 
+.container {
+    display: flex;
+    justify-content: center; /* Center the search bar horizontally */
+    margin-top: 50px; /* Add some space between the navigation and the search bar */
+  }
+  
+  .container-input {
+    position: relative;
+  }
+  
+  .input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+  }
+  
+  .container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+  
+  .input:focus {
+    opacity: 1;
+    width: 250px;
+  }
+  
+  h1 {
+    text-align: center; /* Center the title */
+    margin-top: 20px; /* Add space between the search bar and the title */
+  }
 
 
 

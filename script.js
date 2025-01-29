@@ -166,11 +166,6 @@ if (container) {
         container.style.boxShadow = getShadow(mode, false); // Use default shadow
     });
 }
-
-
-
-// Title hover effect
-// Διασφάλιση ότι το χρώμα είναι το μπλε όταν γίνεται refresh
 document.querySelector('#home h1').style.color = '#1677ff';
 
 
@@ -190,3 +185,6 @@ title.addEventListener('mouseleave', () => {
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
+
+
+
