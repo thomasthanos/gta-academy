@@ -466,7 +466,7 @@ body.dark-mode .menu a:hover {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    background: var(--gradient-color);
+    background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: var(--text-shadow);
