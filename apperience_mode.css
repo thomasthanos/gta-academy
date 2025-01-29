@@ -57,12 +57,11 @@ body .slider:before {
     bottom: 0.35em;
     transition: .4s;
     border-radius: 50%;
-    background-color: #2196F3; /* Blue background */
-    background-image: radial-gradient(at 81% 39%, #3D9BF2 0px, transparent 50%),
-                      radial-gradient(at 11% 72%, #1976D2 0px, transparent 50%),
-                      radial-gradient(at 23% 20%, #64B5F6 0px, transparent 50%);
+    background-color: #FFEB3B;
+    background-image: radial-gradient(at 81% 39%, #FFC107 0px, transparent 50%),
+                      radial-gradient(at 11% 72%, #FF5722 0px, transparent 50%),
+                      radial-gradient(at 23% 20%, #FF9800 0px, transparent 50%);
 }
-
 
 body.dark-mode .slider:before {
     position: absolute;
