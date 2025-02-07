@@ -187,31 +187,54 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 
-
 function search_vehicles() {
     const input = document.getElementById('searchbar').value.toLowerCase();
-    const cards = document.getElementsByClassName('card');
+    const gallery = document.querySelector('.gallery');
+    const cards = Array.from(document.getElementsByClassName('card'));
     let found = false;
-    
-    Array.from(cards).forEach(card => {
+
+    // Διαχωρίζουμε τις κάρτες που ταιριάζουν και αυτές που δεν ταιριάζουν
+    const matchingCards = cards.filter(card => {
         const title = card.querySelector('h6').textContent.toLowerCase();
-        if (title.startsWith(input)) {
-            card.style.display = 'flex';
-            found = true;
-        } else {
-            card.style.display = 'none';
-        }
+        return title.startsWith(input);
     });
 
+    const nonMatchingCards = cards.filter(card => {
+        const title = card.querySelector('h6').textContent.toLowerCase();
+        return !title.startsWith(input);
+    });
+
+    // Εμφανίζουμε τις κάρτες που ταιριάζουν
+    matchingCards.forEach(card => {
+        card.style.display = 'flex'; // ή 'block' ανάλογα με τη διάταξη
+        found = true;
+    });
+
+    // Αφαιρούμε τις κάρτες που δεν ταιριάζουν από το DOM
+    nonMatchingCards.forEach(card => {
+        card.style.display = 'none';
+    });
+
+    // Εμφάνιση μηνύματος "No results found" αν δεν βρέθηκαν αποτελέσματα
     const noResultsMessage = document.getElementById('no-results-message');
     if (!found) {
         if (!noResultsMessage) {
             const message = document.createElement('p');
             message.id = 'no-results-message';
             message.textContent = 'No results found';
-            document.querySelector('.gallery').appendChild(message);
+            gallery.appendChild(message);
         }
     } else if (noResultsMessage) {
         noResultsMessage.remove();
+    }
+
+    // Επαναφορά όλων των καρτών όταν η αναζήτηση είναι κενή
+    if (input === '') {
+        cards.forEach(card => {
+            card.style.display = 'flex'; // ή 'block' ανάλογα με τη διάταξη
+        });
+        if (noResultsMessage) {
+            noResultsMessage.remove();
+        }
     }
 }
