@@ -6,6 +6,7 @@
 }
 
 .input {
+    min-width: 200px;
     width: 50px;
     padding: 8px 24px 8px 52px;
     border-radius: 9999px;
