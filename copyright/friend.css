@@ -211,7 +211,7 @@ body {
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
     position: relative;
-    
+
     /* Διόρθωση: Αφαίρεση του overflow: hidden */
     &::after {
         content: '';
