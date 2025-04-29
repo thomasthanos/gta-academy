@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Grand Theft Auto Academy Wikipedia">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.1">
-  <meta name="HandheldFriendly" content="true">
+    <meta charset="UTF-8">
+    <meta name="description" content="Grand Theft Auto Academy Wikipedia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.1">
+    <meta name="HandheldFriendly" content="true">
 
-  <title>GTA ACADEMY</title>
-  
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="apperience_mode.css">
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="searchbar.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="16x16" href="pictures/home/Rockstar.png">
+    <title>GTA ACADEMY</title>
 
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="apperience_mode.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="searchbar.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="pictures/home/Rockstar.png">
 </head>
 <body>
-  <!-- Navigation Menu -->
-  <header>
+<!-- Navigation Menu -->
+<header>
     <nav>
-      <div class="menu-container">
-        <div class="logo">
-          GTA Academy
+        <div class="menu-container">
+            <div class="logo">
+                GTA Academy
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#helicopters">Helicopter</a></li>
+                <li><a href="#planes">Plane</a></li>
+                <li><a href="#special">Special</a></li>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" class="input__check">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+            </ul>
         </div>
-        <button class="hamburger" aria-label="Toggle navigation">
-          ☰
-        </button>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#cars">Cars</a></li>
-          <li><a href="#helicopters">Helicopter</a></li>
-          <li><a href="#planes">Plane</a></li>
-          <li><a href="#special">Special</a></li>
-        </ul>
-      </div>
     </nav>
-    </header>
+</header>
 
-    <div id="search-container">
-        <div class="container-input">
-            <input type="text" id="searchbar" onkeyup="search_vehicles()" placeholder="Search" name="text" class="input">
-            <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
-            </svg>
-        </div>
+<div id="search-container">
+    <div class="container-input">
+        <input type="text" id="searchbar" onkeyup="search_vehicles()" placeholder="Search" name="text" class="input">
+        <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+            <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
+        </svg>
     </div>
+</div>
 
-
-
-    
-    <!-- From Uiverse.io by EddyBel --> 
-<label class="switch">
-    <input type="checkbox" class="input__check">
-    <span class="slider"></span>
-</label>
-  <main>
+<main>
     <section id="home">
-      <h1>Grand Theft Auto Academy Wikipedia</h1>
-      <div class="image-container">
-        <img src="pictures/home/main.png" alt="GTA Vehicles" class="main-image">
-      </div>
-      <div class="description">
-        <h5 class="note">
-          Note: The data presented here is based on multiple in-game tests and may vary slightly depending on specific conditions.
-        </h5>
-        <h4>
-          To clarify something: All testings were done to fully upgraded vehicles, planes, and helicopters.  
-          Something we noticed is that a vehicle might need 4 RPG rockets to be destroyed the first time, then 5, and then 3.  
-          We've listed the most common results for each vehicle after multiple tests.  
-          Rockstar is a bit weird with vehicle health and weapon damage... Hope it's helpful!
-        </h4>
-      </div>
-      
+        <h1>Grand Theft Auto Academy Wikipedia</h1>
+        <div class="image-container">
+            <img src="pictures/home/main.png" alt="GTA Vehicles" class="main-image">
+        </div>
+        <div class="description">
+            <h5 class="note">
+                Note: The data presented here is based on multiple in-game tests and may vary slightly depending on specific conditions.
+            </h5>
+            <h4>
+                To clarify something: All testings were done to fully upgraded vehicles, planes, and helicopters.
+                Something we noticed is that a vehicle might need 4 RPG rockets to be destroyed the first time, then 5, and then 3.
+                We've listed the most common results for each vehicle after multiple tests.
+                Rockstar is a bit weird with vehicle health and weapon damage... Hope it's helpful!
+            </h4>
+        </div>
     </section>
 
     <section id="cars">
@@ -94,21 +89,21 @@
                 <h6>Chernobog</h6>
                 <img src="pictures/cars/car2.png" alt="Car 2">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟏
-					<br> Kanjali Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟏
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟏
+                    <br> Kanjali Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟏
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Insurgent</h6>
                 <img src="pictures/cars/car3.png" alt="Car 3">
                 <p> RPG ➟➟ 𝟒
-					<br> HOMING ➟➟ 𝟕
-					<br> Tank Shell ➟➟ 𝟐
-					<br> Railgun rounds ➟➟ 𝟗
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟏𝟎
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟕
+                    <br> Tank Shell ➟➟ 𝟐
+                    <br> Railgun rounds ➟➟ 𝟗
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟏𝟎
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Insurgent Pick-Up Custom</h6>
@@ -161,7 +156,7 @@
                     <br> Anti-Aircraft ➟➟ 𝟏</p>
             </div>
             <div class="card">
-                <h6> TM-02 Khanjali</h6>
+                <h6>TM-02 Khanjali</h6>
                 <img src="pictures/cars/car9.png" alt="Car 9">
                 <p> RPG ➟➟ 𝟖
                     <br> HOMING ➟➟ 𝟖
@@ -199,71 +194,71 @@
                 <h6>Buzzard Attack Chopper</h6>
                 <img src="pictures/helicopter/helicopter3.png" alt="Helicopter 3">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟏
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟏
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟐
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟏
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟏
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟐
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Cargobob</h6>
                 <img src="pictures/helicopter/helicopter4.png" alt="Helicopter 4">
                 <p> RPG ➟➟ 𝟐
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟑
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟑
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>FH-1 Hunter</h6>
                 <img src="pictures/helicopter/helicopter5.png" alt="Helicopter 5">
                 <p> RPG ➟➟ 𝟑
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟐
-					<br> Railgun rounds ➟➟ 𝟓
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟔
-					<br> Anti-Aircraft ➟➟ 𝟐 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟐
+                    <br> Railgun rounds ➟➟ 𝟓
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟔
+                    <br> Anti-Aircraft ➟➟ 𝟐 </p>
             </div>
             <div class="card">
                 <h6>Savage</h6>
                 <img src="pictures/helicopter/helicopter6.png" alt="Helicopter 6">
                 <p> RPG ➟➟ 𝟐
-					<br> HOMING ➟➟ 𝟐
-					<br> Tank Shell ➟➟ 𝟐
-					<br> Railgun rounds ➟➟ 𝟑
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟐 </p>
+                    <br> HOMING ➟➟ 𝟐
+                    <br> Tank Shell ➟➟ 𝟐
+                    <br> Railgun rounds ➟➟ 𝟑
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟐 </p>
             </div>
             <div class="card">
                 <h6>Sparrow</h6>
                 <img src="pictures/helicopter/helicopter7.png" alt="Helicopter 7">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟏
-					<br> Tank Shell ➟➟ 𝟏-𝟐
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟔
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟏
+                    <br> Tank Shell ➟➟ 𝟏-𝟐
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟔
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Valkyrie</h6>
                 <img src="pictures/helicopter/helicopter8.png" alt="Helicopter 8">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟏
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟏
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟏
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟏
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟏
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟏
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Weaponized Conada</h6>
                 <img src="pictures/helicopter/helicopter9.png" alt="Helicopter 9">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟏
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟏
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟏
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟏
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>DH-7 Iron Mule</h6>
@@ -271,13 +266,13 @@
                 <p> RPG ➟ 3
                     <br> HOMING ➟ 3
                     <br> Tank Shell ➟ 1
-                    <br> Railgun rounds ➟ 2 
+                    <br> Railgun rounds ➟ 2
                     <br> Heavy Sniper Mk II ➟ 7
                     <br> Anti-Aircraft ➟ 1 </p>
             </div>
         </div>
-    </section>    
-    
+    </section>
+
     <section id="planes">
         <h2>Planes</h2>
         <div class="gallery">
@@ -285,71 +280,71 @@
                 <h6>P-996 Lazer</h6>
                 <img src="pictures/planes/plane1.png" alt="Plane 1">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Hydra</h6>
                 <img src="pictures/planes/plane2.png" alt="Plane 2">
-                <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟐
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟏
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟐
-					<br> Anti-Aircraft ➟➟ 𝟏</p>
+                <p> RPG ➟ ➟ 𝟏
+                    <br> HOMING ➟➟ 𝟐
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟏
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟐
+                    <br> Anti-Aircraft ➟➟ 𝟏</p>
             </div>
             <div class="card">
                 <h6>F-𝟏𝟔𝟎 Raiju</h6>
                 <img src="pictures/planes/plane3.png" alt="Plane 3">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏</p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏</p>
             </div>
             <div class="card">
                 <h6>B-11 Strikeforce</h6>
                 <img src="pictures/planes/plane4.png" alt="Plane 4">
                 <p> RPG ➟➟ 𝟐
-					<br> HOMING ➟➟ 𝟓
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟒
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟓
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟓
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟒
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟓
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>RO-86 Alkonost</h6>
                 <img src="pictures/planes/plane5.png" alt="Plane 5">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>RM-10 Bombushka</h6>
                 <img src="pictures/planes/plane6.png" alt="Plane 6">
                 <p> RPG ➟➟ 1
-					<br> HOMING ➟➟ 3
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 2
-					<br> Heavy Sniper Mk II EXP ➟➟ 3
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 3
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 2
+                    <br> Heavy Sniper Mk II EXP ➟➟ 3
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Pyro</h6>
                 <img src="pictures/planes/plane7.png" alt="Plane 7">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>P-45 Nokota</h6>
@@ -366,7 +361,7 @@
                 <img src="pictures/planes/plane9.png" alt="Plane 9">
                 <p> RPG ➟➟ 1
                     <br> HOMING ➟➟ 3
-                    <br> Tank Shell ➟➟ 1 
+                    <br> Tank Shell ➟➟ 1
                     <br> Heavy Sniper Mk II EXP ➟➟ 3
                     <br> Railgun rounds ➟➟ 2
                     <br> Anti-Aircraft ➟➟ 1 </p>
@@ -405,35 +400,35 @@
                 <h6>Rogue</h6>
                 <img src="pictures/planes/plane13.png" alt="Plane 13">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
             <div class="card">
                 <h6>Volatol</h6>
                 <img src="pictures/planes/plane14.png" alt="Plane 14">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏</p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏</p>
             </div>
             <div class="card">
                 <h6>Tula</h6>
                 <img src="pictures/planes/plane15.png" alt="Plane 15">
                 <p> RPG ➟➟ 𝟏
-					<br> HOMING ➟➟ 𝟑
-					<br> Tank Shell ➟➟ 𝟏
-					<br> Railgun rounds ➟➟ 𝟐
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟑
-					<br> Anti-Aircraft ➟➟ 𝟏 </p>
+                    <br> HOMING ➟➟ 𝟑
+                    <br> Tank Shell ➟➟ 𝟏
+                    <br> Railgun rounds ➟➟ 𝟐
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟑
+                    <br> Anti-Aircraft ➟➟ 𝟏 </p>
             </div>
         </div>
     </section>
-    
+
     <section id="special">
         <h2>Special</h2>
         <div class="gallery">
@@ -471,11 +466,11 @@
                 <h6>Mobile operations center</h6>
                 <img src="pictures/special/special4.png" alt="Special 4">
                 <p> RPG ➟➟ 𝟏𝟗
-					<br> HOMING ➟➟ 𝟐𝟎
-					<br> Tank Shell ➟➟ 𝟒
-					<br> Railgun rounds ➟➟ 𝟒𝟒
-					<br> Heavy Sniper Mk II EXP ➟➟ 𝟒𝟗
-					<br> Anti-Aircraft ➟➟ 𝟐 </p>
+                    <br> HOMING ➟➟ 𝟐𝟎
+                    <br> Tank Shell ➟➟ 𝟒
+                    <br> Railgun rounds ➟➟ 𝟒𝟒
+                    <br> Heavy Sniper Mk II EXP ➟➟ 𝟒𝟗
+                    <br> Anti-Aircraft ➟➟ 𝟐 </p>
             </div>
             <div class="card">
                 <h6>RC Bandito</h6>
@@ -509,12 +504,13 @@
             </div>
         </div>
     </section>
-  
+
     <script src="script.js"></script>
-  <footer>
-    <p class="copyright">&copy; 2024-2025 GTA 5 ACADEMY | Worked on this project: Thomas_2873 , Tony_greek. 
-        <a href="copyright/copyright.html">All rights reserved.</a>
-    </p>
-</footer>
+    <footer>
+        <p class="copyright">&copy; 2024-2025 GTA 5 ACADEMY | Worked on this project: Thomas_2873 , Tony_greek.
+            <a href="copyright/copyright.html">All rights reserved.</a>
+        </p>
+    </footer>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9381883d3b937ba8',t:'MTc0NTk1ODM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

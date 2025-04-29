@@ -66,10 +66,10 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'squid', sans-serif;
-    text-shadow: 
+    text-shadow:
         2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
         -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) 
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
             drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
 }
 
@@ -113,10 +113,10 @@ header {
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s, color 0.3s;
     font-family: 'typwrng', sans-serif;
     /* Default shadows for light mode */
-    text-shadow: 
+    text-shadow:
         2px 2px 5px rgba(0, 0, 0, 0.5), /* Light outer glow */
         -2px -2px 5px rgba(0, 0, 0, 0.4); /* Light inner glow */
-    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0)) 
+    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0))
             drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.377));
 }
 
@@ -159,10 +159,10 @@ color: #adadad;
     background: rgb(0, 156, 177);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 
+    text-shadow:
         2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
         -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) 
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
             drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
 }
 
@@ -324,17 +324,17 @@ body.dark-mode .image-container:hover {
     color: #b10000; /* Highlight color when hovering over the link */
     transition: 150ms;
 }
-/* From Uiverse.io by garerim */ 
+/* From Uiverse.io by garerim */
 .container {
     display: flex;
     justify-content: center; /* Center the search bar horizontally */
     margin-top: 50px; /* Add some space between the navigation and the search bar */
   }
-  
+
   .container-input {
     position: relative;
   }
-  
+
   .input {
 
     width: 150px;
@@ -345,19 +345,19 @@ body.dark-mode .image-container:hover {
     outline: none;
     opacity: 0.8;
   }
-  
+
   .container-input svg {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translate(0, -50%);
   }
-  
+
   .input:focus {
     opacity: 1;
     width: 250px;
   }
-  
+
   h1 {
     text-align: center; /* Center the title */
     margin-top: 20px; /* Add space between the search bar and the title */
@@ -407,7 +407,7 @@ body.dark-mode .image-container:hover {
         gap: 30px;
         padding: 0 20px;
     }
-    
+
     h5 { font-size: 20px; }
     h4 { font-size: 14px; }
 }
@@ -417,7 +417,7 @@ body.dark-mode .image-container:hover {
     .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
-    
+
     .description {
         margin: 0 0.5em;
         padding: 1em;
@@ -431,7 +431,7 @@ body.dark-mode .image-container:hover {
         width: 95%;
         max-width: none;
     }
-    
+
     .menu {
         display: none;
         position: fixed;
@@ -446,15 +446,15 @@ body.dark-mode .image-container:hover {
         transition: left 0.5s ease-in-out, opacity 0.3s ease;
         z-index: 999;
     }
-    
+
     .menu.show {
         display: flex;
         left: 0;
         animation: fadeIn 0.5s ease-in-out;
     }
-    
+
     .menu li { margin: 15px 0; }
-    
+
     .menu a {
         font-size: 18px;
         padding: 15px 30px;
@@ -463,14 +463,14 @@ body.dark-mode .image-container:hover {
         transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         border-radius: 8px; /* Add rounded corners for a modern look */
     }
-    
+
     .menu a:hover {
         background: linear-gradient(90deg, #4facfe, #00f2fe); /* Blue gradient */
         transform: scale(1.05); /* Slightly enlarge the link */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         animation: pulse 1.5s infinite; /* Add a pulse animation */
     }
-    
+
     @keyframes pulse {
         0% {
             transform: scale(1);
@@ -482,13 +482,13 @@ body.dark-mode .image-container:hover {
             transform: scale(1);
         }
     }
-    
+
     .hamburger {
         display: block;
         cursor: pointer;
         z-index: 1000;
     }
-    
+
     .logo {
         width: fit-content;
         margin: 0 auto;
@@ -503,7 +503,7 @@ body.dark-mode .image-container:hover {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
+
     .card {
         transform: scale(0.95);
     }
@@ -515,17 +515,17 @@ body.dark-mode .image-container:hover {
         gap: 25px;
         padding: 0 15px;
     }
-    
+
     #home h1 {
         font-size: 24px;
         letter-spacing: 1px;
     }
-    
+
     .card {
         width: 85%;
         margin: 0 auto;
     }
-    
+
     p { font-size: 20px; }
     h4 { font-size: 18px; }
     .description { font-size: 3vw !important; }
@@ -536,13 +536,9 @@ body.dark-mode .image-container:hover {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-    
-    .switch {
-        top: 80px;
-        right: 20px;
-        transform: scale(0.80);
-    }
-    
+
+
+
     p { font-size: 22px; }
     h4 { font-size: 15px; }
     h5 { font-size: 14px; }
@@ -570,23 +566,23 @@ body.dark-mode .image-container:hover {
         gap: 20px;
         padding: 0 10px;
     }
-    
+
     .card {
         width: 95%;
         max-width: 90%;
         margin: 0 auto;
     }
-    
+
     #home h1 {
         font-size: 20px;
         letter-spacing: 0.5px;
     }
-    
+
     .description {
         padding: 0.8em;
         font-size: 2.5vw !important;
     }
-    
+
     .card p {
         font-size: clamp(14px, 4vw, 16px);
     }
@@ -600,7 +596,7 @@ body.dark-mode .image-container:hover {
 }
 
 .card {
-    transition: 
+    transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
