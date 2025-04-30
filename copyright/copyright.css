@@ -62,22 +62,23 @@ body {
     border-radius: 24px;
     padding: 2px;
     background: linear-gradient(
-        45deg,
-        #00bcd4 25%,
-        transparent 25%,
-        transparent 50%,
-        #00bcd4 50%,
-        #00bcd4 75%,
-        transparent 75%,
-        transparent
+            45deg,
+            #00bcd4 0%,
+            #00bcd4 25%,
+            transparent 25%,
+            transparent 50%,
+            #00bcd4 50%,
+            #00bcd4 75%,
+            transparent 75%,
+            transparent 100%
     );
     background-size: 200% 200%;
     -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
     mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: border-flow 3s linear infinite;

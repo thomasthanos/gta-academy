@@ -1,3 +1,5 @@
+
+
 .switch {
     font-size: 17px;
     position: fixed;
@@ -17,7 +19,7 @@
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0px;
+    top: 0;
     filter: blur(2px);
     z-index: -1;
     border-radius: 50px;
@@ -25,7 +27,9 @@
     background-image: radial-gradient(at 21% 46%, #FFC107 0px, transparent 50%),
     radial-gradient(at 23% 25%, #FF5722 0px, transparent 50%),
     radial-gradient(at 20% 1%, #FF9800 0px, transparent 50%);
-    box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.5), 0 0 15px 3px rgba(255, 87, 34, 0.5), 0 0 20px 3px rgba(255, 152, 0, 0.6);
+    box-shadow: 0 0 5px 2px rgba(255, 193, 7, 0.3),
+    0 0 8px 2px rgba(255, 87, 34, 0.3),
+    0 0 10px 2px rgba(255, 152, 0, 0.4);
 }
 
 .switch input {
@@ -47,7 +51,7 @@
     box-shadow: none;
 }
 
-body .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 1.4em;
@@ -63,14 +67,6 @@ body .slider:before {
 }
 
 body.dark-mode .slider:before {
-    position: absolute;
-    content: "";
-    height: 1.4em;
-    width: 1.4em;
-    left: 0.3em;
-    bottom: 0.35em;
-    transition: .4s;
-    border-radius: 50%;
     background-color: #000000;
     background-image: radial-gradient(at 81% 39%, #90c1e9 0px, transparent 50%),
     radial-gradient(at 11% 72%, #283C5B 0px, transparent 50%),
@@ -78,20 +74,13 @@ body.dark-mode .slider:before {
 }
 
 body.dark-mode .switch::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0px;
-    filter: blur(2px);
-    z-index: -1;
-    border-radius: 50px;
     background-color: #34495E;
     background-image: radial-gradient(at 21% 46%, #BDC3C7 0px, transparent 50%),
     radial-gradient(at 23% 25%, #95A5A6 0px, transparent 50%),
     radial-gradient(at 20% 1%, #7F8C8D 0px, transparent 50%);
-    box-shadow: 0 0 15px 5px rgba(189, 195, 199, 0.6), 0 0 10px 5px rgba(52, 152, 219, 0.5), 0 0 30px 0px rgba(189, 195, 199, 0.8);
+    box-shadow: 0 0 10px 3px rgba(189, 195, 199, 0.4),
+    0 0 6px 3px rgba(52, 152, 219, 0.3),
+    0 0 15px 0 rgba(189, 195, 199, 0.5);
 }
 
 .input__check:checked + .slider {
@@ -107,12 +96,13 @@ body .card {
     color: #121212;
 }
 
-body .description {
+.description {
     color: #333;
     background-color: #ffffff;
     box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8);
     border-radius: 1em;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: box-shadow 0.2s ease, background-color 0.3s ease, transform 0.2s ease;
+    font-size: 18px;
 }
 
 .description .note {
@@ -123,10 +113,6 @@ body .description {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.description {
-    font-size: 18px;
-}
-
 body.dark-mode .description {
     color: #e0e0e0;
     background-color: #24252e;
@@ -134,14 +120,6 @@ body.dark-mode .description {
     border-radius: 1em;
     border: 1.5px solid #3a3b44;
     transition: box-shadow 0.2s ease, background-color 0.3s ease, border 0.2s ease, transform 0.2s ease;
-}
-
-body .description {
-    color: #333;
-    background-color: #ffffff;
-    box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.1), -0.3em -0.3em 0.5em rgba(255, 255, 255, 0.8);
-    border-radius: 1em;
-    transition: box-shadow 0.2s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 body.dark-mode .description:hover {
@@ -162,7 +140,8 @@ body.light-mode .image-container {
 
 body.dark-mode .image-container {
     background: linear-gradient(145deg, #1f1f1f, #292929);
-    box-shadow: 0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918), inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39);
+    box-shadow: 0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918),
+    inset 0 5px 10px rgba(50, 60, 90, 0.2), inset 10px -10px 10px 5px rgba(60, 70, 100, 0.39);
 }
 
 body.light-mode .image-container:hover {
@@ -178,7 +157,7 @@ section {
 }
 
 h2 {
-    font-size: 2.5rem ;
+    font-size: 2.5rem;
     text-align: center;
     text-transform: uppercase;
     border-bottom: 2px solid #000000;
@@ -187,12 +166,8 @@ h2 {
     background: rgb(0, 0, 0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'squid', sans-serif;
-    text-shadow:
-            2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
-            -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26), -2px -2px 5px rgba(0, 0, 0, 0.26);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26));
 }
 
 body.dark-mode h2 {
@@ -202,11 +177,8 @@ body.dark-mode h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'squid', sans-serif;
-    text-shadow:
-            2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
-            -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26), -2px -2px 5px rgba(0, 0, 0, 0.26);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26));
 }
 
 #cars {
@@ -220,11 +192,27 @@ body.dark-mode h2 {
 body.light-mode {
     background-color: #ffffff;
     color: #1d2b69;
+    --card-bg: #ffffff;
+    --card-content-bg: #f9f9f9;
+    --text-color: #333;
+    --text-color-hover: #000;
+    --border-color: #ddd;
+    --gradient-color: linear-gradient(90deg, #d6d6d6, #ffffff);
+    --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    --hover-text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
+    --card-bg: #1e1e2f;
+    --card-content-bg: #2b2b3c;
+    --text-color: #e0e0e0;
+    --text-color-hover: #fff;
+    --border-color: #444;
+    --gradient-color: linear-gradient(90deg, #1f1f1f, #292929); /* Διορθώθηκε σε gradient */
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.466), -2px -2px 4px rgba(0, 0, 0, 0.342);
+    --hover-text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.062);
 }
 
 .card {
@@ -244,26 +232,6 @@ body.dark-mode {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-}
-
-body.light-mode {
-    --card-bg: #ffffff;
-    --card-content-bg: #f9f9f9;
-    --text-color: #333;
-    --text-color-hover: #000;
-    --border-color: #ddd;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-body.dark-mode {
-    --card-bg: #1e1e2f;
-    --card-content-bg: #2b2b3c;
-    --text-color: #e0e0e0;
-    --text-color-hover: #fff;
-    --border-color: #444;
-    background-color: #121212;
-    color: #e0e0e0;
 }
 
 .mode-toggle {
@@ -298,7 +266,7 @@ body.dark-mode .card img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.425);
 }
 
-.dark-mode .card p {
+body.dark-mode .card p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,50 +303,37 @@ body.dark-mode .card img:hover {
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Light Mode */
+/* Υπενθύμιση: Το fadeIn animation δεν χρησιμοποιείται. Εφάρμοσέ το αν χρειάζεται, π.χ.:
+   .some-element { animation: fadeIn 1s ease-in; }
+*/
+
 body.light-mode #home h1 {
-    text-shadow:
-            2px 2px 4px rgba(0, 0, 0, 0.13), /* Black shadow for light mode */
-            -2px -2px 4px rgba(0, 0, 0, 0.253);
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13), -2px -2px 4px rgba(0, 0, 0, 0.253);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
 }
 
-/* Dark Mode */
-.dark-mode #home h1 {
-    text-shadow:
-            2px 2px 5px rgba(0, 0, 0, 0.329), /* White shadow for dark mode */
-            -2px -2px 5px rgba(0, 0, 0, 0.322);
-    filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.068))
-    drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.062));
+body.dark-mode #home h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.329), -2px -2px 5px rgba(0, 0, 0, 0.322);
+    filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.068)) drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.062));
 }
 
 body.dark-mode .menu a {
-    color: var(--text-light); /* Override for dark mode */
-    /* Shadows for dark mode */
-    text-shadow:
-            2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
-            -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
+    color: var(--text-color); /* Αντικαταστάθηκε το --text-light με --text-color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26), -2px -2px 5px rgba(0, 0, 0, 0.26);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26));
 }
 
 body.dark-mode .menu a:hover {
     color: #006572;
 }
 
-/* Dark Mode Card h6 with New Effects */
 .card h6 {
     margin: 4px 0;
-    font-size: 25px; /* Default font size for PC */
+    font-size: 25px;
     text-align: center;
     font-weight: 600;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -388,26 +343,14 @@ body.dark-mode .menu a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: var(--text-shadow);
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26)) drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
     transition: transform 0.3s ease, letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.dark-mode .card h6 {
-    margin: 4px 0;
-    font-size: 25px; /* Default font size for PC */
-    text-align: center;
-    font-weight: 600;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+body.dark-mode .card h6 {
     background: rgb(206, 206, 206);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: var(--text-shadow);
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.247));
-    transition: transform 0.3s ease, letter-spacing 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .card h6:hover {
@@ -416,23 +359,6 @@ body.dark-mode .menu a:hover {
     text-shadow: var(--hover-text-shadow);
 }
 
-/* Default Light Mode */
-body.light-mode {
-    --gradient-color: linear-gradient(90deg, #d6d6d6, #ffffff);
-    --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    --hover-text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode {
-    --gradient-color: rgb(0, 156, 177); /* Set the solid background color for dark mode */
-    --text-shadow:
-            2px 2px 4px rgba(0, 0, 0, 0.466), /* Black shadow for dark mode */
-            -2px -2px 4px rgba(0, 0, 0, 0.342);
-    --hover-text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.062);
-    background: rgb(0, 156, 177); /* Solid background color */
-}
-
-/* Optimized Media Queries */
 @media (min-width: 1440px) {
     .card h6 { font-size: 28px; }
 }
@@ -461,9 +387,7 @@ body.light-mode {
     .card h6 { font-size: 14px; }
 }
 
-/* Combined Device Queries */
 @media (max-width: 1380px) {
-    /* Shared styles for medium screens */
     body.light-mode .image-container {
         background: linear-gradient(145deg, #ffffff, #f3f3f3);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -471,19 +395,16 @@ body.light-mode {
 
     body.dark-mode .image-container {
         background: linear-gradient(145deg, #1f1f1f, #292929);
-        box-shadow: 0 3px 7px rgba(50, 60, 90, 0.15),
-        -5px 5px 10px rgba(60, 70, 100, 0.5),
-        inset 0 3px 7px rgba(50, 60, 90, 0.15),
-        inset 5px -5px 7px rgba(60, 70, 100, 0.3);
+        box-shadow: 0 3px 7px rgba(50, 60, 90, 0.15), -5px 5px 10px rgba(60, 70, 100, 0.5),
+        inset 0 3px 7px rgba(50, 60, 90, 0.15), inset 5px -5px 7px rgba(60, 70, 100, 0.3);
     }
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 1265px) {
     .switch {
         position: static;
         margin: 7px auto;
-        transform: scale(0.9) !important;
+        transform: scale(0.9);
         display: block;
         width: 3.5em;
         height: 2em;
@@ -493,22 +414,6 @@ body.light-mode {
     }
 }
 
-
-/* Light mode shadow effect */
-.switch::before {
-    box-shadow: 0 0 5px 2px rgba(255, 193, 7, 0.3),
-    0 0 8px 2px rgba(255, 87, 34, 0.3),
-    0 0 10px 2px rgba(255, 152, 0, 0.4) !important;
-}
-
-/* Dark mode shadow effect */
-.dark-mode .switch::before {
-    box-shadow: 0 0 10px 3px rgba(189, 195, 199, 0.4),
-    0 0 6px 3px rgba(52, 152, 219, 0.3),
-    0 0 15px 0px rgba(189, 195, 199, 0.5) !important;
-}
-
-/* Hover states for all devices */
 body.light-mode .image-container:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 12px 12px rgba(0, 0, 0, 0.1);
 }
