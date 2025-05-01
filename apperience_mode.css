@@ -124,13 +124,41 @@ body.dark-mode .description:hover {
     background-color: #333840;
     border: 1.5px solid #5a5b6b;
 }
+.description {
+    margin-top: 35px;
+    margin-left: 15em;
+    margin-right: 15em;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    background-color: #f2f3f7;
+    border-radius: 0.75em;
+    padding: 0em 2em 0.5em 2em;
+    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
+    border: 1.5px solid #f2f3f7;
+    cursor: pointer;
+    transition: ease 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.description:hover {
+    background-color: #d3ddf1;
+    border: 1.5px solid #1677ff;
+}
 body.dark-mode .card {
     background: linear-gradient(145deg, #212429, #212429);
     border: 2px solid #3c3d47;
     color: white;
 }
-
+.card .description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    padding: 10px;
+    text-align: justify;
+    font-family: 'Arial', sans-serif;
+}
 
 
 
