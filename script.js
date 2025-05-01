@@ -1,9 +1,9 @@
 // Force mobile rendering για μικρές οθόνες
 const mobileBreakpoint = 351;
-if(window.innerWidth <= mobileBreakpoint || window.innerHeight <= mobileBreakpoint) {
+if (window.innerWidth <= mobileBreakpoint || window.innerHeight <= mobileBreakpoint) {
     document.documentElement.classList.add('ultra-mobile');
     document.body.style.zoom = '0.85';
-    
+
     // Απενεργοποίηση όλων των animations
     CSS.registerProperty({
         name: '--disable-animations',
@@ -11,65 +11,56 @@ if(window.innerWidth <= mobileBreakpoint || window.innerHeight <= mobileBreakpoi
         initialValue: 1,
         inherits: false
     });
-    
+
     document.querySelectorAll('*').forEach(el => {
         el.style.setProperty('transition', 'none !important');
         el.style.setProperty('animation', 'none !important');
     });
 }
 
-
-
 // Επιλέγουμε το στοιχείο κουμπιού
 const switchButton = document.querySelector('.switch');
 
 // Όταν η σελίδα κάνει scroll
 window.addEventListener('scroll', () => {
-    // Παίρνουμε την τρέχουσα θέση κύλισης
     const scrollPosition = window.scrollY;
 
-    // Ελέγχουμε αν η θέση κύλισης είναι μεγαλύτερη από 80px
     if (scrollPosition > 80) {
-        // Μετακινείται και αποκτά δυναμικό effect (με εφέ αναλαμπής και μεγέθυνσης)
         switchButton.style.transform = 'translateX(100px) scale(0.6) rotate(15deg)';
-        switchButton.style.opacity = '0'; // Κρύβουμε το κουμπί
-        switchButton.style.visibility = 'hidden'; // Το κάνει εντελώς αόρατο
-        switchButton.style.pointerEvents = 'none'; // Απενεργοποιούμε το click
-        
+        switchButton.style.opacity = '0';
+        switchButton.style.visibility = 'hidden';
+        switchButton.style.pointerEvents = 'none';
     } else {
-        // Επιστρέφει στην αρχική του θέση με πιο μοντέρνα κίνηση
         switchButton.style.transform = 'translateX(0) scale(1) rotate(0deg)';
-        switchButton.style.opacity = '1'; // Επαναφορά πλήρους διαφάνειας
-        switchButton.style.visibility = 'visible'; // Το κάνει ξανά ορατό
-        switchButton.style.pointerEvents = 'auto'; // Ενεργοποιούμε το click ξανά
+        switchButton.style.opacity = '1';
+        switchButton.style.visibility = 'visible';
+        switchButton.style.pointerEvents = 'auto';
     }
 });
-
-
 
 // Toggle mobile menu
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
 
 hamburger.addEventListener('click', () => {
-  menu.classList.toggle('show');
+    menu.classList.toggle('show');
 });
 
 // Smooth scrolling for internal links
 document.querySelectorAll('.menu a').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
 
-    menu.classList.remove('show'); // Close menu on mobile after click
-  });
+        menu.classList.remove('show');
+    });
 });
 
 // Default to dark mode
@@ -79,162 +70,134 @@ themeSwitch.checked = true;
 
 // Check user preference on reload and handle theme switching
 if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  themeSwitch.checked = true;
+    document.body.classList.add('dark-mode');
+    themeSwitch.checked = true;
 } else {
-  document.body.classList.add('light-mode');
+    document.body.classList.add('light-mode');
 }
 
-// Toggle dark/light mode
 themeSwitch.addEventListener('change', () => {
-  document.body.classList.toggle('dark-mode');
-  document.body.classList.toggle('light-mode');
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.removeItem('theme');
-  }
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.removeItem('theme');
+    }
 });
 
-const container = document.querySelector('.image-container');
+// Χρώμα τίτλου
+const title = document.querySelector('#home h1');
+title.addEventListener('mouseenter', () => {
+    title.style.transition = "all 0.3s ease";
+    title.style.color = "#1677ff";
+    title.style.textShadow = "2px 2px 8px rgba(0, 0, 0, 0.3)";
+});
 
-// Function to get shadow based on mode and screen size
-const getShadow = (mode, isHover) => {
-    const isSmallScreen = window.innerWidth <= 768; // Detect small screens
-    const isExtraSmallScreen = window.innerWidth <= 480; // Detect very small screens
+// Λειτουργία αναζήτησης οχημάτων
+function search_vehicles() {
+    let input = document.getElementById('searchbar').value.toLowerCase();
+    let cards = document.querySelectorAll('.gallery .card');
 
-    if (mode === 'dark-mode') {
-        if (isExtraSmallScreen) {
-            return isHover
-                ? "0 10px 20px rgba(50, 60, 90, 0.5), 0 5px 10px rgba(60, 70, 100, 0.25)"
-                : "0 5px 10px rgba(50, 60, 90, 0.2), -8px 8px 12px rgba(60, 70, 100, 0.8)";
-        } else if (isSmallScreen) {
-            return isHover
-                ? "0 15px 30px rgba(50, 60, 90, 0.5), 0 10px 20px rgba(60, 70, 100, 0.3)"
-                : "0 8px 16px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.4)";
+    cards.forEach(card => {
+        let title = card.querySelector('h6').textContent.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = 'block';
         } else {
-            return isHover
-                ? "0 35px 70px rgba(50, 60, 90, 0.6), 0 25px 25px rgba(60, 70, 100, 0.3)"
-                : "0 5px 10px rgba(50, 60, 90, 0.2), -10px 10px 15px rgba(60, 70, 100, 0.918)";
+            card.style.display = 'none';
         }
-    } else {
-        if (isExtraSmallScreen) {
-            return isHover
-                ? "0 10px 20px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.15)"
-                : "0 5px 10px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1)";
-        } else if (isSmallScreen) {
-            return isHover
-                ? "0 15px 30px rgba(0, 0, 0, 0.3), 0 10px 15px rgba(0, 0, 0, 0.2)"
-                : "0 8px 16px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15)";
-        } else {
-            return isHover
-                ? "0 35px 70px rgba(0, 0, 0, 0.3), 0 20px 20px rgba(0, 0, 0, 0.15)"
-                : "0 25px 50px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.2)";
-        }
-    }
-};
-
-if (container) {
-    // Mouse move effect
-    container.addEventListener('mousemove', (e) => {
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const xPercent = (x / rect.width) * 100;
-        const yPercent = (y / rect.height) * 100;
-
-        const rotateX = ((yPercent - 50) / 10) * -1;
-        const rotateY = ((xPercent - 50) / 10);
-
-        container.style.transition = "transform 0.1s ease";
-        container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    // Mouse enter effect
-    container.addEventListener('mouseenter', () => {
-        const mode = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-        container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease";
-        container.style.boxShadow = getShadow(mode, true); // Use hover shadow
-    });
-
-    // Mouse leave effect
-    container.addEventListener('mouseleave', () => {
-        const mode = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-        container.style.transition = "transform 0.8s ease, box-shadow 1.5s ease";
-        container.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
-        container.style.boxShadow = getShadow(mode, false); // Use default shadow
     });
 }
-document.querySelector('#home h1').style.color = '#1677ff';
 
-
-title.addEventListener('mouseenter', () => {
-    title.style.transition = "all 0.3s ease"; // Ομαλή μετάβαση
-    title.style.color = "#1677ff"; // Αλλαγή χρώματος κατά το hover
-    title.style.textShadow = "2px 2px 8px rgba(0, 0, 0, 0.3)"; // Ενίσχυση της σκιάς
-    title.style.transform = "scale(1.05)"; // Ελαφριά αύξηση μεγέθους για ένταση
-});
-
-title.addEventListener('mouseleave', () => {
-    title.style.transition = "all 0.3s ease"; // Ομαλή μετάβαση
-    title.style.color = "#333"; // Επαναφορά του χρώματος
-    title.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.2)"; // Επαναφορά της σκιάς
-    title.style.transform = "scale(1)"; // Επαναφορά στο αρχικό μέγεθος
-});
-document.addEventListener('contextmenu', function(e) {
+// Προστασίες
+document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
+    showProtectionMessage('Right-click is disabled to protect our content.');
 });
 
-
-function search_vehicles() {
-    const input = document.getElementById('searchbar').value.toLowerCase();
-    const gallery = document.querySelector('.gallery');
-    const cards = Array.from(document.getElementsByClassName('card'));
-    let found = false;
-
-    // Διαχωρίζουμε τις κάρτες που ταιριάζουν και αυτές που δεν ταιριάζουν
-    const matchingCards = cards.filter(card => {
-        const title = card.querySelector('h6').textContent.toLowerCase();
-        return title.startsWith(input);
-    });
-
-    const nonMatchingCards = cards.filter(card => {
-        const title = card.querySelector('h6').textContent.toLowerCase();
-        return !title.startsWith(input);
-    });
-
-    // Εμφανίζουμε τις κάρτες που ταιριάζουν
-    matchingCards.forEach(card => {
-        card.style.display = 'flex'; // ή 'block' ανάλογα με τη διάταξη
-        found = true;
-    });
-
-    // Αφαιρούμε τις κάρτες που δεν ταιριάζουν από το DOM
-    nonMatchingCards.forEach(card => {
-        card.style.display = 'none';
-    });
-
-    // Εμφάνιση μηνύματος "No results found" αν δεν βρέθηκαν αποτελέσματα
-    const noResultsMessage = document.getElementById('no-results-message');
-    if (!found) {
-        if (!noResultsMessage) {
-            const message = document.createElement('p');
-            message.id = 'no-results-message';
-            message.textContent = 'No results found';
-            gallery.appendChild(message);
-        }
-    } else if (noResultsMessage) {
-        noResultsMessage.remove();
+document.addEventListener('keydown', function (e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'u')
+    ) {
+        e.preventDefault();
+        showProtectionMessage('Access to developer tools and source code is restricted.');
     }
-
-    // Επαναφορά όλων των καρτών όταν η αναζήτηση είναι κενή
-    if (input === '') {
-        cards.forEach(card => {
-            card.style.display = 'flex'; // ή 'block' ανάλογα με τη διάταξη
-        });
-        if (noResultsMessage) {
-            noResultsMessage.remove();
-        }
+    if (e.ctrlKey && e.key === 'c') {
+        e.preventDefault();
+        showProtectionMessage('Copying content is disabled to protect our work.');
     }
+    if (e.ctrlKey && e.key === 's') {
+        e.preventDefault();
+        showProtectionMessage('Saving the page is disabled.');
+    }
+    if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+        showProtectionMessage('Printing the page is disabled.');
+    }
+});
+
+document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+    showProtectionMessage('Text selection is disabled to protect our content.');
+});
+
+document.addEventListener('dragstart', function (e) {
+    e.preventDefault();
+    showProtectionMessage('Dragging images is disabled.');
+});
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        showProtectionMessage('Saving images is disabled to protect our content.');
+    });
+});
+
+function showProtectionMessage(message) {
+    const messageBox = document.createElement('div');
+    messageBox.id = 'protection-message';
+    messageBox.style.position = 'fixed';
+    messageBox.style.top = '50%';
+    messageBox.style.left = '50%';
+    messageBox.style.transform = 'translate(-50%, -50%)';
+    messageBox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    messageBox.style.color = '#fff';
+    messageBox.style.padding = '20px 40px';
+    messageBox.style.borderRadius = '10px';
+    messageBox.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.5)';
+    messageBox.style.zIndex = '9999';
+    messageBox.style.fontFamily = "'Poppins', sans-serif";
+    messageBox.style.textAlign = 'center';
+    messageBox.style.maxWidth = '400px';
+    messageBox.style.fontSize = '16px';
+    messageBox.style.lineHeight = '1.5';
+
+    messageBox.innerHTML = `
+        <h3 style="margin: 0 0 10px; font-size: 20px;">Content Protected</h3>
+        <p>${message}</p>
+        <button style="
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        ">Close</button>
+    `;
+
+    document.body.appendChild(messageBox);
+
+    messageBox.querySelector('button').addEventListener('click', function () {
+        messageBox.remove();
+    });
+
+    setTimeout(() => {
+        if (document.body.contains(messageBox)) {
+            messageBox.remove();
+        }
+    }, 5000);
 }
