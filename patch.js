@@ -4,6 +4,21 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 // Απενεργοποίηση επιλογής κειμένου
 document.addEventListener('selectstart', e => e.preventDefault());
 
+// Εφαρμογή user-select: none σε όλα τα στοιχεία
+document.documentElement.style.userSelect = 'none';
+document.documentElement.style.webkitUserSelect = 'none';
+document.documentElement.style.msUserSelect = 'none';
+
+document.body.style.userSelect = 'none';
+document.body.style.webkitUserSelect = 'none';
+document.body.style.msUserSelect = 'none';
+
+document.querySelectorAll('*').forEach(el => {
+    el.style.userSelect = 'none';
+    el.style.webkitUserSelect = 'none';
+    el.style.msUserSelect = 'none';
+});
+
 // Απενεργοποίηση drag and drop
 document.addEventListener('dragstart', e => e.preventDefault());
 
@@ -20,6 +35,17 @@ document.addEventListener('keydown', e => {
         showProtectionMessage('Shortcuts and developer tools are disabled.');
     }
 });
+
+// Απενεργοποίηση copy event
+document.addEventListener('copy', e => {
+    e.preventDefault();
+    showProtectionMessage('Copying is disabled.');
+});
+
+// Μπλοκάρισμα clipboard API
+if (navigator.clipboard) {
+    navigator.clipboard.writeText = () => Promise.reject('Copying is disabled');
+}
 
 // Popup εμφάνισης προστασίας
 function showProtectionMessage(message) {
