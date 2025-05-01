@@ -105,3 +105,28 @@ function search_vehicles() {
         }
     });
 }
+document.querySelectorAll('.description').forEach(description => {
+    const shortText = description.querySelector('.short-text');
+    const fullText = description.querySelector('.full-text');
+    const button = description.querySelector('.show-more');
+
+    if (window.innerWidth >= 500) {
+        // Σε μεγάλα πλάτη, δείξε πάντα όλο το κείμενο, κρύψε το κουμπί
+        if (shortText) shortText.style.display = 'none';
+        if (fullText) fullText.style.display = 'inline';
+        if (button) button.style.display = 'none';
+    } else if (button) {
+        // Σε μικρές οθόνες, δούλεψε με toggle
+        button.addEventListener('click', () => {
+            if (fullText.style.display === 'none') {
+                shortText.style.display = 'none';
+                fullText.style.display = 'inline';
+                button.textContent = 'Show Less';
+            } else {
+                shortText.style.display = 'inline';
+                fullText.style.display = 'none';
+                button.textContent = 'Show More';
+            }
+        });
+    }
+});

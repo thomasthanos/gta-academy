@@ -410,6 +410,65 @@ body.dark-mode .copyright a:hover {
     outline: none;
     opacity: 0.8;
   }
+/* Show More button - white mode */
+body.light-mode .description .show-more {
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* Hover effect - white mode */
+body.light-mode .description .show-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e2ebf0, #cfd9df);
+}
+
+/* Show More button - dark mode */
+body.dark-mode .description .show-more {
+    background: linear-gradient(135deg, #1a2a3c, #16202c);
+    border: none;
+    color: #e0f7fa;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* Hover effect - dark mode */
+body.dark-mode .description .show-more:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 18px rgba(0, 242, 254, 0.5);
+}
+
+/* Κρύψε το κουμπί πάνω από 500px */
+@media (min-width: 500px) {
+    .description .show-more {
+        display: none !important;
+    }
+}
+
+/* Περιβάλλον h4 ώστε το κουμπί να μην αφήνει κενά */
+.description-heading {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
   .container-input svg {
     position: absolute;
