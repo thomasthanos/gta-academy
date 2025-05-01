@@ -4,7 +4,7 @@ html {
 h5 {
     font-size: 24px; /* Default μέγεθος για desktop */
 }
-.card, .description, h2, h3, h4, h5, h6 {
+.card, h2, h3, h5, h6 {
     font-family: 'ComicSansLocal', cursive, sans-serif;
 }
 body {
@@ -232,6 +232,7 @@ body.dark-mode {
     border: 1.5px solid #f2f3f7;
     cursor: pointer;
     transition: ease 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .description:hover {
