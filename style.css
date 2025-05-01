@@ -1,3 +1,22 @@
+:root {
+    --primary-color: #009cb1;
+    --secondary-color: #444;
+    --accent-color: #ff6ec4;
+    --text-color: #202020;
+    --text-color-light: #ffffff;
+    --background-light: #f4f4f4;
+    --background-dark: #121212;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e1e2f;
+    --border-color-light: #ddd;
+    --border-color-dark: #444;
+    --link-color: #009cb1;
+    --link-hover-color: #ff6ec4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color-strong: rgba(0, 0, 0, 0.3);
+    --copyright-bg-base: rgba(0, 156, 177, 0.2);
+}
+
 html {
     overflow-y: scroll;
 }
@@ -17,7 +36,6 @@ body {
     padding-top: 45px;
     user-select: none;
 }
-
 html::-webkit-scrollbar {
     width: 10px;
 }
@@ -35,17 +53,14 @@ html::-webkit-scrollbar-track {
     background: #c9d6df;
     border-radius: 4px;
 }
-
 html::-webkit-scrollbar-thumb {
     background: #4e6e7d;
     border-radius: 4px;
     transition: background 0.3s ease-in-out;
 }
-
 html::-webkit-scrollbar-thumb:hover {
     background: #3b545f;
 }
-
 header {
     position: fixed;
     top: 0;
@@ -59,7 +74,6 @@ header {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
 .logo {
     font-size: 28px;
     background: rgb(0, 156, 177);
@@ -67,12 +81,11 @@ header {
     -webkit-text-fill-color: transparent;
     font-family: 'squid', sans-serif;
     text-shadow:
-        2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
-        -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
+            2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
+            -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-            drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
+    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
 }
-
 .menu-container {
     display: flex;
     align-items: center;
@@ -86,14 +99,12 @@ header {
     background-color: #333;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
-
 .menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .menu li {
     margin: 0 10px;
 }
@@ -114,16 +125,14 @@ header {
     font-family: 'typwrng', sans-serif;
     /* Default shadows for light mode */
     text-shadow:
-        2px 2px 5px rgba(0, 0, 0, 0.5), /* Light outer glow */
-        -2px -2px 5px rgba(0, 0, 0, 0.4); /* Light inner glow */
+            2px 2px 5px rgba(0, 0, 0, 0.5), /* Light outer glow */
+            -2px -2px 5px rgba(0, 0, 0, 0.4); /* Light inner glow */
     filter: drop-shadow(2px 2px 2px rgb(0, 0, 0))
-            drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.377));
+    drop-shadow(-2px -2px 2px rgba(255, 255, 255, 0.377));
 }
-
 .menu a:hover {
-color: #adadad;
+    color: #adadad;
 }
-
 .hamburger {
     display: none;
     background: none;
@@ -133,17 +142,13 @@ color: #adadad;
     cursor: pointer;
     transition: transform 0.3s;
 }
-
 .hamburger:hover {
     transform: scale(1.2);
 }
-
-
 #home {
     padding: 20px 20px 40px;
     text-align: center;
 }
-
 #home h1 {
     font-size: 36px;
     font-weight: bold;
@@ -160,12 +165,11 @@ color: #adadad;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
-        -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
+            2px 2px 5px rgba(0, 0, 0, 0.26), /* Outer shadow */
+            -2px -2px 5px rgba(0, 0, 0, 0.26); /* Outer shadow from opposite side */
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.26))
-            drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
+    drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.26)); /* Simulating inner shadow */
 }
-
 .image-container {
     margin: 30px auto;
     max-width: 1200px;
@@ -183,15 +187,13 @@ color: #adadad;
     align-items: center;
     transition: background 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
 }
-
 .image-container:hover {
     box-shadow:
             inset 5px 5px 15px rgba(0, 0, 0, 0.25),
             inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-            0 0 25px rgba(0, 156, 177, 0.4);
-    border: 1px solid rgba(0, 156, 177, 0.4);
+            0 0 25px var(--copyright-bg-base);
+    border: 1px solid var(--copyright-bg-base);
 }
-
 .main-image {
     width: 100%;
     height: auto;
@@ -200,23 +202,16 @@ color: #adadad;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
 }
-
 .main-image:hover {
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
 }
-
 /* Define light/dark mode variables */
 :root {
     --container-bg: rgba(255, 255, 255, 0.15);
 }
-
 body.dark-mode {
     --container-bg: rgba(0, 0, 0, 0.3);
 }
-
-
-
-
 .description {
     margin-top: 35px;
     margin-left: 15em;
@@ -234,23 +229,18 @@ body.dark-mode {
     transition: ease 0.2s;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .description:hover {
     background-color: #d3ddf1;
     border: 1.5px solid #1677ff;
 }
-
-
 .card p:hover {
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
-
 .card img {
     width: calc(95% - 20px);
     aspect-ratio: 16 / 9;
@@ -260,14 +250,12 @@ body.dark-mode {
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
 .card img:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     opacity: 1;
     filter: contrast(115%);
 }
-
 .card .description {
     font-size: 14px;
     line-height: 1.6;
@@ -276,7 +264,6 @@ body.dark-mode {
     text-align: justify;
     font-family: 'Arial', sans-serif;
 }
-
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -285,7 +272,6 @@ body.dark-mode {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-overflow-scrolling: touch;
 }
-
 .copyright {
     position: relative;
     overflow: hidden;
@@ -305,7 +291,6 @@ body.dark-mode {
     width: 100%;
     transition: all 0.5s ease;
 }
-
 /* Animated starfield background */
 .copyright::before {
     content: "";
@@ -320,12 +305,10 @@ body.dark-mode {
     pointer-events: none;
     opacity: 0.4;
 }
-
 @keyframes starfieldMove {
     from { transform: translate(0, 0); }
     to { transform: translate(80px, 80px); }
 }
-
 .copyright a {
     position: relative;
     color: #f5f5f5;
@@ -333,7 +316,6 @@ body.dark-mode {
     font-weight: 600;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
 .copyright a::after {
     content: "";
     position: absolute;
@@ -347,61 +329,48 @@ body.dark-mode {
     transform-origin: left;
     transition: transform 0.4s ease, background-position 0.4s ease;
 }
-
 .copyright a:hover::after {
     transform: scaleX(1);
     background-position: right;
 }
-
 .copyright a:hover {
     color: #00f2fe;
     text-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
 }
-
 /* Light mode */
 body.light-mode .copyright {
     background: rgba(255, 255, 255, 0.4);
-    color: #202020;
+    color: var(--text-color);
 }
-
 body.light-mode .copyright a {
-    color: #202020;
+    color: var(--text-color);
 }
-
 body.light-mode .copyright a:hover {
     color: #ff6ec4;
     text-shadow: 0 0 12px rgba(255, 110, 196, 0.6);
 }
-
 /* Dark mode */
 body.dark-mode .copyright {
     background: rgba(20, 20, 30, 0.85);
     color: #e0e0e0;
 }
-
 body.dark-mode .copyright a {
     color: #e0e0e0;
 }
-
 body.dark-mode .copyright a:hover {
     color: #7873f5;
     text-shadow: 0 0 12px rgba(120, 115, 245, 0.8);
 }
-
-
 /* From Uiverse.io by garerim */
 .container {
     display: flex;
     justify-content: center; /* Center the search bar horizontally */
     margin-top: 50px; /* Add some space between the navigation and the search bar */
-  }
-
-  .container-input {
+}
+.container-input {
     position: relative;
-  }
-
-  .input {
-
+}
+.input {
     width: 150px;
     padding: 10px 0px 10px 40px;
     border-radius: 9999px;
@@ -409,25 +378,21 @@ body.dark-mode .copyright a:hover {
     transition: all 0.2s ease-in-out;
     outline: none;
     opacity: 0.8;
-  }
-
-  .container-input svg {
+}
+.container-input svg {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translate(0, -50%);
-  }
-
-  .input:focus {
+}
+.input:focus {
     opacity: 1;
     width: 250px;
-  }
-
-  h1 {
+}
+h1 {
     text-align: center; /* Center the title */
     margin-top: 20px; /* Add space between the search bar and the title */
-  }
-
+}
 #no-results-message {
     text-align: center;
     font-size: 20px;
@@ -443,12 +408,10 @@ body.dark-mode .copyright a:hover {
     position: relative;
     top: 10px;
 }
-
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-10px); }
     100% { opacity: 1; transform: translateY(0); }
 }
-
 /* White mode */
 body.light-mode .description .show-more {
     background: linear-gradient(135deg, #cfd9df, #e2ebf0);
@@ -465,17 +428,14 @@ body.light-mode .description .show-more {
     margin-left: 10px;
     margin-top: 6px; /* +6px κάτω */
 }
-
 body.light-mode .description .show-more:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #e2ebf0, #cfd9df);
 }
-
 body.light-mode .description .show-more:active {
     filter: brightness(0.95);
 }
-
 /* Dark mode */
 body.dark-mode .description .show-more {
     background: linear-gradient(135deg, #1a2a3c, #16202c);
@@ -492,23 +452,19 @@ body.dark-mode .description .show-more {
     margin-left: 10px;
     margin-top: 8px; /* +6px κάτω */
 }
-
 body.dark-mode .description .show-more:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 0 18px rgba(0, 242, 254, 0.5);
 }
-
 body.dark-mode .description .show-more:active {
     filter: brightness(1.1);
 }
-
 /* Κρύψε το κουμπί πάνω από 500px */
 @media (min-width: 500px) {
     .description .show-more {
         display: none !important;
     }
 }
-
 /* Περιβάλλον h4 ώστε το κουμπί να μην αφήνει κενά */
 .description-heading {
     margin: 0;
@@ -516,8 +472,6 @@ body.dark-mode .description .show-more:active {
     align-items: center;
     flex-wrap: wrap;
 }
-
-
 /* Large Desktops & Tablet Landscape */
 @media (max-width: 1650px) {
     .gallery {
@@ -525,13 +479,11 @@ body.dark-mode .description .show-more:active {
         gap: 40px;
     }
 }
-
 @media (max-width: 1650px) and (orientation: landscape) {
     .gallery {
         gap: 40px;
     }
 }
-
 /* Desktop & Tablet Portrait */
 @media (max-width: 1400px) {
     .gallery {
@@ -539,31 +491,26 @@ body.dark-mode .description .show-more:active {
         gap: 30px;
         padding: 0 20px;
     }
-
     h5 { font-size: 20px; }
     h4 { font-size: 14px; }
 }
-
 /* Medium Screens */
 @media (max-width: 1368px) {
     .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
-
     .description {
         margin: 0 0.5em;
         padding: 1em;
         font-size: 14px;
     }
 }
-
 /* Tablets & Mobile Landscape */
 @media (max-width: 1268px) {
     .card {
         width: 95%;
         max-width: none;
     }
-
     .menu {
         display: none;
         position: fixed;
@@ -578,15 +525,12 @@ body.dark-mode .description .show-more:active {
         transition: left 0.5s ease-in-out, opacity 0.3s ease;
         z-index: 999;
     }
-
     .menu.show {
         display: flex;
         left: 0;
         animation: fadeIn 0.5s ease-in-out;
     }
-
     .menu li { margin: 15px 0; }
-
     .menu a {
         font-size: 18px;
         padding: 15px 30px;
@@ -595,14 +539,12 @@ body.dark-mode .description .show-more:active {
         transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         border-radius: 8px; /* Add rounded corners for a modern look */
     }
-
     .menu a:hover {
         background: linear-gradient(90deg, #4facfe, #00f2fe); /* Blue gradient */
         transform: scale(1.05); /* Slightly enlarge the link */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         animation: pulse 1.5s infinite; /* Add a pulse animation */
     }
-
     @keyframes pulse {
         0% {
             transform: scale(1);
@@ -614,13 +556,11 @@ body.dark-mode .description .show-more:active {
             transform: scale(1);
         }
     }
-
     .hamburger {
         display: block;
         cursor: pointer;
         z-index: 1000;
     }
-
     .logo {
         width: fit-content;
         margin: 0 auto;
@@ -628,68 +568,54 @@ body.dark-mode .description .show-more:active {
         transition: 300ms;
     }
 }
-
 /* Mobile Screens */
 @media (max-width: 900px) and (orientation: landscape) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-
     .card {
         transform: scale(0.95);
     }
 }
-
 @media (max-width: 800px) {
     .gallery {
         grid-template-columns: 1fr !important;
         gap: 25px;
         padding: 0 15px;
     }
-
     #home h1 {
         font-size: 24px;
         letter-spacing: 1px;
     }
-
     .card {
         width: 85%;
         margin: 0 auto;
     }
-
     p { font-size: 20px; }
     h4 { font-size: 18px; }
     .description { font-size: 3vw !important; }
 }
-
 @media (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-
-
-
     p { font-size: 22px; }
     h4 { font-size: 15px; }
     h5 { font-size: 14px; }
 }
-
 @media (max-width: 600px) {
     .gallery { gap: 20px; }
 }
-
 @media (max-width: 580px) {
     h4 { font-size: 12px; }
     h5 { font-size: 11px; }
     p { font-size: 18px; }
 }
-
 @media (max-width: 520px) {
     p { font-size: 17px; }
 }
-
 @media (max-width: 480px) {
     .gallery {
         display: flex;
@@ -698,45 +624,37 @@ body.dark-mode .description .show-more:active {
         gap: 20px;
         padding: 0 10px;
     }
-
     .card {
         width: 95%;
         max-width: 90%;
         margin: 0 auto;
     }
-
     #home h1 {
         font-size: 20px;
         letter-spacing: 0.5px;
     }
-
     .description {
         padding: 0.8em;
         font-size: 2.5vw !important;
     }
-
     .card p {
         font-size: clamp(14px, 4vw, 16px);
     }
 }
-
 /* Orientation Handling */
 @media (orientation: portrait), (orientation: landscape) {
     .gallery {
         transition: all 0.4s ease-in-out;
     }
 }
-
 .card {
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
 }
-
 .card:hover {
     transform: translateY(-5px);
 }
-
 /* Fluid Typography */
 /* Ενημέρωση υπαρχόντων clamp() */
 h4 { font-size: clamp(14px, 3.5vw, 20px); }
@@ -750,7 +668,6 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 /* Desktop adjustments */
 @media (min-width: 1024px) {
     .image-container {
@@ -759,14 +676,12 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         perspective: 1200px;
     }
 }
-
 @media (min-width: 1024px) and (max-width: 1440px) {
     .image-container {
         max-width: 800px;
         padding: 25px;
     }
 }
-
 /* Tablets */
 @media (max-width: 1024px) {
     .image-container {
@@ -774,12 +689,10 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         padding: 15px;
         perspective: 1000px;
     }
-
     .image-container:hover {
         transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) scale(1.04);
     }
 }
-
 /* Small tablets & large phones */
 @media (max-width: 768px) {
     .image-container {
@@ -788,7 +701,6 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         perspective: 800px;
     }
 }
-
 /* Small phones */
 @media (max-width: 480px) {
     .image-container {
@@ -797,20 +709,17 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         border-radius: 25px;
         perspective: 600px;
     }
-
     .image-container:hover {
         transform: perspective(600px) rotateX(2deg) rotateY(-2deg) scale(1.02);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
-
     .copyright {
         font-size: 8px;
-        background-color: rgba(0, 156, 177, 0.75);
+        background-color: var(--copyright-bg-base);
         padding: 4px 0;
         letter-spacing: 0.3px;
     }
 }
-
 /* Very small phones */
 @media (max-width: 320px) {
     .image-container {
@@ -819,20 +728,17 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         border-radius: 6px;
         perspective: 500px;
     }
-
     .image-container:hover {
         transform: none;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-
     .copyright {
         font-size: 9px;
-        background-color: rgba(0, 156, 177, 0.7);
+        background-color: var(--copyright-bg-base);
         padding: 5px 0;
         letter-spacing: 0.2px;
     }
 }
-
 /* Extremely small screens */
 @media (max-width: 240px) {
     .image-container {
@@ -840,67 +746,59 @@ p { font-size: clamp(15px, 4.5vw, 20px); }
         padding: 4px;
         border-radius: 5px;
     }
-
     .image-container:hover {
         transform: none;
         box-shadow: none;
     }
 }
-
 /* Orientation */
 @media (orientation: portrait) {
     .image-container {
         max-height: 60vh;
     }
 }
-
 @media (orientation: landscape) {
     .image-container {
         max-height: 80vh;
         margin: 10px auto;
     }
 }
-
 /* Copyright optimizations */
 @media (max-width: 1200px) {
     .copyright {
         font-size: 15px;
-        background-color: rgba(0, 156, 177, 0.88);
+        background-color: var(--copyright-bg-base);
         padding: 11px 0;
     }
 }
-
 @media (max-width: 1050px) {
     .copyright {
         font-size: 14px;
-        background-color: rgba(0, 156, 177, 0.85);
+        background-color: var(--copyright-bg-base);
         padding: 10px 0;
         letter-spacing: 0.8px;
     }
 }
-
 @media (max-width: 900px) {
     .copyright {
         font-size: 13px;
-        background-color: rgba(0, 156, 177, 0.82);
+        background-color: var(--copyright-bg-base);
         padding: 9px 0;
         letter-spacing: 0.6px;
     }
 }
-
 @media (max-width: 768px) {
     .copyright {
         font-size: 12px;
-        background-color: rgba(0, 156, 177, 0.8);
+        background-color: var(--copyright-bg-base);
         padding: 8px 0;
         letter-spacing: 0.5px;
     }
 }
-
 @media (max-width: 600px) {
     .copyright {
         font-size: 11px;
-        background-color: rgba(0, 156, 177, 0.77);
+        background-color: var(--copyright-bg-base);
         padding: 7px 0;
         letter-spacing: 0.4px;
     }
