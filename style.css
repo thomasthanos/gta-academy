@@ -490,7 +490,7 @@ body.dark-mode .description .show-more {
     display: inline-flex;
     align-items: center;
     margin-left: 10px;
-    margin-top: 6px; /* +6px κάτω */
+    margin-top: 8px; /* +6px κάτω */
 }
 
 body.dark-mode .description .show-more:hover {
