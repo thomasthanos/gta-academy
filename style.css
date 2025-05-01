@@ -449,7 +449,7 @@ body.dark-mode .copyright a:hover {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Show More button - white mode */
+/* White mode */
 body.light-mode .description .show-more {
     background: linear-gradient(135deg, #cfd9df, #e2ebf0);
     border: none;
@@ -463,16 +463,20 @@ body.light-mode .description .show-more {
     display: inline-flex;
     align-items: center;
     margin-left: 10px;
+    margin-top: 6px; /* +6px κάτω */
 }
 
-/* Hover effect - white mode */
 body.light-mode .description .show-more:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #e2ebf0, #cfd9df);
 }
 
-/* Show More button - dark mode */
+body.light-mode .description .show-more:active {
+    filter: brightness(0.95);
+}
+
+/* Dark mode */
 body.dark-mode .description .show-more {
     background: linear-gradient(135deg, #1a2a3c, #16202c);
     border: none;
@@ -486,12 +490,16 @@ body.dark-mode .description .show-more {
     display: inline-flex;
     align-items: center;
     margin-left: 10px;
+    margin-top: 6px; /* +6px κάτω */
 }
 
-/* Hover effect - dark mode */
 body.dark-mode .description .show-more:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 0 18px rgba(0, 242, 254, 0.5);
+}
+
+body.dark-mode .description .show-more:active {
+    filter: brightness(1.1);
 }
 
 /* Κρύψε το κουμπί πάνω από 500px */
